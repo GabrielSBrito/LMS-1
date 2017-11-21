@@ -1,3 +1,3 @@
 django<1.10
 
-pymysql
+pymysql==0.7.11
