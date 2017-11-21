@@ -23,7 +23,7 @@ DATABASES = {
         'USER': 'azure',
         'PASSWORD': '',
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '54224',
     }
 }
 
