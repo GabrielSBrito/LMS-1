@@ -22,7 +22,7 @@ DATABASES = {
         'NAME': 'django_lms',
         'USER': 'azure',
         'PASSWORD': '',
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '54224',
     }
 }
