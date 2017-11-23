@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+workon env
 """
 Command-line utility for administrative tasks.
 """
