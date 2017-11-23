@@ -21,7 +21,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_lms',
         'USER': 'azure',
-        'PASSWORD': '',
+        'PASSWORD': '6#vWHD_$',
         'HOST': '127.0.0.1',
         'PORT': '57152',
     }
