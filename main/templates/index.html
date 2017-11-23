@@ -3,21 +3,21 @@
 	<head>
 		<title>Home</title>
 		{% load staticfiles %}
-		<link rel="stylesheet" type="{% static "text/css" %}" href="style.css">
-		<link rel="stylesheet" type="text/css" href="estilomenu.css">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/estilomenu.css' %}">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 		<link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
 		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-		<script type="text/javascript" src="js.js"></script>
-		<script type="text/javascript" src="jsmenu.js"></script>
+		<script type="text/javascript" src="{% static 'js/js.js' %}"></script>
+		<script type="text/javascript" src="{% static 'jsmenu.js' %}"></script>
 
 	</head>
 	<body> 
 	
 		<header>
 			<div id="logo">
-				<img class="imglogo" src="img/transp.jpeg" style="width:100%">
+				<img class="imglogo" src="{% static 'img/transp.jpeg' %}" style="width:100%">
 			</div>
 			
 			<div id="superior-direito">
@@ -41,19 +41,19 @@
 		<div class="slideshow-container">
 			<div class="mySlides fade">
 				<div class="numbertext"></div>
-				<img src="img/estudantes.jpeg" style="width:109%">
+				<img src="{% statis 'img/estudantes.jpeg' %}" style="width:109%">
 				<div class="text"></div>
 			</div>
 
 			<div class="mySlides fade">
 				<div class="numbertext"></div>
-				<img src="img/layout.jpeg" style="width:109%">
+				<img src="{% static 'img/layout.jpeg' %}" style="width:109%">
 				<div class="text"></div>
 			</div>
 
 			<div class="mySlides fade">
 				<div class="numbertext"></div>
-				<img src="img/new.jpeg" style="width:113%">
+				<img src="{% static 'img/new.jpeg' %}" style="width:113%">
 				<div class="text"></div>
 			</div>
 
