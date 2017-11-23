@@ -11,7 +11,7 @@ TEMPLATE_DEBUG = DEBUG
 ALLOWED_HOSTS = {'*'}
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+     #('Yan Santos', 'yan.santosf@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -123,6 +123,8 @@ TEMPLATE_DIRS = (
 
 INSTALLED_APPS = (
     'django.contrib.auth',
+    'django.contrib.admin',
+    'django.contrib.admindocs',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
@@ -130,11 +132,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'app',
 	'main',
-    # Uncomment the next line to enable the admin:
-     'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-     'django.contrib.admindocs',
-)
+    )
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
