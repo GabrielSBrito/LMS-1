@@ -6,7 +6,10 @@ Command-line utility for administrative tasks.
 
 import os
 import sys
+sys.path.append('./env/lib/site-packages')
 
+import pymysql
+pymysql.install_as_MySQLdb()
 
 if __name__ == "__main__":
     os.environ.setdefault(
