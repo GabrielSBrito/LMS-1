@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load staticfiles %}
+    <title>Portal - Aluno </title>
+    <meta charset="utf-8"/>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/EstiloMenuAlunoProf.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/EstiloPortal.css' %}"/>
+
+
+
+    <!--Link de Fontes-->
+
+
+
+  </head>
+  <body>
+
+    <div id="lateral">
+      <div id="menu">
+        <h3 class="link-titulo">Secretaria</h3>
+        <ul class="box">					
+          <li><a href="boletimA.html">Boletim</a></li>
+          <li><a href="calendario-geral.html">Calendário de Aulas</a></li>
+          <li ><a href="horario-aulas.html">Horário das Aulas</a></li>
+          <li ><a href="dadosA.html">Alterar Dados</a></li>
+
+        </ul>
+        <h3 class="link-titulo">Financeiro</h3>
+        <ul class="box">
+          <li><a href="pagamentos.html">Pagamentos</a></li>
+        </ul>
+        <h3 class="link-titulo">Acesso as Aulas</h3>
+        <ul class="box">					
+          <li><a href="AulasGravadas.html">Aulas Gravadas </a></li> 			
+          <li><a href="entrega-trabalho.html">Entrega de Trabalhos</a></li> 		
+          <li><a href="entrega-atividades.html">Entrega de Atividades</a></li> 	
+
+        </ul>
+      </div> 
+    </div>
+    <div class="base">
+
+      <div class="row-fluid">
+        <img id="LoginPicture" src="{% static 'img/foto.png' %}"></div>
+      <!--<input type="file">-->
+      <span><div class="DPessoaisA" id="LoginContent">
+          <div class="row-fluid">
+            <div class="span4">
+              <div class="p"><h6>Nome:</h6><p></p> <strong>Aluno</strong></div>
+              <div class="p"><h6>RA:</h6><p></p> <strong>###### </strong></div>
+            </div>
+            <div class="span8">
+              <div class="p"><h6>Curso:</h6><p></p> <strong>Matéria</strong></div>
+            </div>
+          </div>
+        </div>
+        <button class="botao-dados" type="submit"><a href="dadosA.html">Alterar Dados</a></button>
+        <button class="botao-sair"><span><a href="index.html">Sair</a></span></button>
+
+    </div>
+    <div class="boletim">
+      <center><h1>Boletim<hr class="boletim-hr"></h1></center>
+
+      <h3>Matéria:</h3>
+      <h5>Linguagem de Programação II</h5>
+      <button id="myBtn" class="botao-ver" type="submit">Ver Notas</button>
+
+    </div>
+
+
+
+    <!-- Trigger/Open The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Notas e Faltas</h2>
+        </div>
+        <div class="modal-body">
+          <table>
+            <tr>
+              <th>Disciplina</th>
+              <th>Faltas</th>
+              <th>Turno</th>
+              <th>N.P</th>
+              <th>N.T</th>
+              <th>N.F</th>
+            </tr>
+            <tr>
+              <td>Linguagem de Programação II</td>
+              <td>0</td>
+              <td>Manhã</td>
+              <td>8,00</td>
+              <td>6,00</td>
+              <td>7,00</td>
+            </tr>
+            <tr>
+          </table>
+          <br/><br/><br/><br/><br/>
+          <h5> Legendas:</h5>
+          <table>
+            <tr>
+              <td>N.P - Nota de Prova</tr>
+            <td>N.T - Nota de Trabalho</tr>
+            <td>N.F - Nota Final </tr>
+              </tr>        
+          </table> 
+        </div>
+        <div class="modal-footer">
+          <h3></h3>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById('myModal');
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal 
+      btn.onclick = function () {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+
+    <div id="footer" class="footer" data-bind="css: { 'default': !backgroundLogoUrl() }"> 
+      <div>
+        <span id="ftrCopy" data-bind="html: svr.B2"><center>©2017 Royal Tech</center></span>
+      </div> 
+    </div> 
+  </body>
+</html>

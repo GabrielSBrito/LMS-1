@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load staticfiles %}
+    <title>Portal - Aluno</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/EstiloPortal.css' %}"/>
+
+
+    <!--Link de Fontes-->
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  </head>
+  <body>
+    <div id="lateral">
+      <div id="menu">
+        <h3 class="link-titulo">Secretaria</h3>
+        <ul class="box">					
+          <li><a href="boletimA.html">Boletim</a></li>
+          <li><a href="calendario-geral.html">Calendário de Aulas</a></li>
+          <li ><a href="horario-aulas.html">Horário das Aulas</a></li>
+          <li ><a href="dadosA.html">Alterar Dados</a></li>
+
+        </ul>
+        <h3 class="link-titulo">Financeiro</h3>
+        <ul class="box">
+          <li><a href="pagamentos.html">Pagamentos</a></li>
+        </ul>
+        <h3 class="link-titulo">Acesso as Aulas</h3>
+        <ul class="box">					
+          <li><a href="AulasGravadas.html">Aulas Gravadas </a></li> 			
+          <li><a href="entrega-trabalho.html">Entrega de Trabalhos</a></li> 		
+          <li><a href="entrega-atividades.html">Entrega de Atividades</a></li> 	
+
+        </ul>
+      </div> 
+    </div>
+    <section id="subir-aula" class="content-section text-center">
+      <div class="contact-section">
+        <div class="container">
+          <center><h1>Acesso as Aulas<hr></h1></center>
+
+
+          <fieldset class="contorno">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <h4>Disciplina:</h4><select class="caixa-materia">
+                      <option type="text" value="Selecione a Disciplina">Selecione a Disciplina</option>
+                      <option type="text" value="LPII" required="">Linguagem de Programação II</option>
+                      <option type="text" value="ES" required=""> Engenharia de Software</option>
+                    </select>
+
+                  </div>
+                  <br>
+                  <div class="form-inline" id="search-dates">
+                    <h2><label><b>De:</b> </label>
+                      <input type="date" class="data" id="data-de">
+                      <label><b>Até:</b> </label>
+                      <input type="date" class="data" id="data-ate"></h2>
+                  </div>
+
+                  <br><br><br><br>
+                  <button type="submit" class="botao"><img src="{% static 'img/pesquisa.png' %}">Pesquisar</button>
+                </form>
+
+              </div>
+
+            </div>	
+          </fieldset>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="footer" class="footer" data-bind="css: { 'default': !backgroundLogoUrl() }"> 
+      <div>
+        <span id="ftrCopy" data-bind="html: svr.B2"><center>©2017 Royal Tech</center></span>
+      </div> 
+
+
+  </body>
+</html>

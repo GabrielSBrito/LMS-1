@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load staticfiles %}
+    <title>Portal - Professor </title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/EstiloPortal.css' %}">
+
+    <!--Link de Fontes-->
+
+  </head>
+  <body>
+
+    <div id="lateral">
+      <div id="menu">
+        <h3 class="link-titulo">Secretaria</h3>
+        <ul class="box">					
+          <li><a href="lancarNotas.html">Boletim</a></li>
+          <li><a href="calendario-geral.html">Calendário de Aulas</a></li>
+          <li ><a href="horario-aulas.html">Horário das Aulas</a></li>
+          <li ><a href="dadosP.html">Alterar Dados</a></li>
+        </ul>
+        <h3 class="link-titulo">Financeiro</h3>
+        <ul class="box">
+          <li><a href="pagamentos.html">Pagamentos</a></li>
+        </ul>
+        <h3 class="link-titulo">Acesso as Aulas</h3>
+        <ul class="box">					
+          <li><a href="SubirAula.html">Subir Aula</a></li> 			
+          <li><a href="entrega-trabalhoP.html">Entrega de Trabalhos</a></li> 		
+          <li><a href="entrega-atividadesP.html">Entrega de Atividades</a></li> 	
+
+        </ul>
+
+
+      </div> 
+    </div>
+
+    <section id="subir-aula" class="content-section text-center">
+      <div class="contact-section">
+        <div class="container">
+          <center><h1>Subir Aulas<hr></h1></center>
+
+
+          <fieldset class="contorno">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <h4>Disciplina:</h4><select class="caixa-materia">
+                      <option type="text" value="Selecione a Disciplina">Selecione a Disciplina</option>
+                      <option type="text" value="LPII" required="">Linguagem de Programação II</option>
+                      <option type="text" value="ES" required=""> Engenharia de Software</option>
+                    </select>
+
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label><h4>Data:</label></h4>
+                    <input type="date" class="form-control" id="exampleDtDe">
+                  </div>
+                  <br>
+                  <tr>
+                    <td>
+                      <label class="aula" for="video"><h4>Aula:</h4></label>
+                    </td>
+                    <td>
+                      <input id="subir" class="subir-aula" type="file" name="imagem">
+                    </td>
+                  </tr>
+                  <br><br><br><br>
+                  <button type="submit" class="botao">Subir Aula</button>
+                </form>
+
+              </div>
+            </div>	</fieldset>
+        </div>
+
+      </div>
+    </section>
+
+    <div id="footer" class="footer" data-bind="css: { 'default': !backgroundLogoUrl() }"> 
+      <div>
+        <span id="ftrCopy" data-bind="html: svr.B2"><center>©2017 Royal Tech</center></span>
+      </div> 
+    </div> 
+  </body>
+</html>

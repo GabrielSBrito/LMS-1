@@ -1,71 +1,71 @@
 <!DOCTYPEhtml>
- <html>
-	<head>
-		<title>Home</title>
-		{% load staticfiles %}
-		<link rel="stylesheet" href="{% static 'css/style.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'css/estilomenu.css' %}">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-		<link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
-		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
-        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-		<script type="text/javascript" src="{% static 'js/js.js' %}"></script>
-		<script type="text/javascript" src="{% static 'jsmenu.js' %}"></script>
+<html>
+  <head>
+    <title>Home</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilomenu.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/js.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jsmenu.js' %}"></script>
 
-	</head>
-	<body> 
-	
-		<header>
-			<div id="logo">
-				<img class="imglogo" src="{% static 'img/transp.jpeg' %}" style="width:100%">
-			</div>
-			
-			<div id="superior-direito">
-				<nav class="nav-bar">
-					<div class="nav-container"> 
-						<a id="nav-menu" class="nav-menu">&#9776; Menu</a>
-							<ul class="nav-list " id="nav">
-								<li> <a href="#" id="tile1"><i class="icon ion-ios7-home-outline"></i> Home</a></li>
-								<li> <a href="#" id="tile2"><i class="icon ion-ios7-person-outline"></i> Aluno</a></li>
-								<li> <a href="#" id="tile3"><i class="icon ion-ios7-briefcase-outline"></i> Professor</a></li>
-								<li> <a href="#" id="tile7"><i class="ion-ios7-paper-outline"></i> Sobre</a></li>
-								<li> <a href="#" id="tile8"><i class="ion-ios7-email-outline"></i> Contact</a></li>
-							</ul>
-					</div>
-				</nav>
-				
-			</div>
-			
-		</header>
-	
-		<div class="slideshow-container">
-			<div class="mySlides fade">
-				<div class="numbertext"></div>
-				<img src="{% static 'img/estudantes.jpeg' %}" style="width:109%">
-				<div class="text"></div>
-			</div>
+  </head>
+  <body> 
 
-			<div class="mySlides fade">
-				<div class="numbertext"></div>
-				<img src="{% static 'img/layout.jpeg' %}" style="width:109%">
-				<div class="text"></div>
-			</div>
+    <header>
+      <div id="logo">
+        <img class="imglogo" src="{% static 'img/transp.jpeg' %}" style="width:100%">
+      </div>
 
-			<div class="mySlides fade">
-				<div class="numbertext"></div>
-				<img src="{% static 'img/new.jpeg' %}" style="width:113%">
-				<div class="text"></div>
-			</div>
+      <div id="superior-direito">
+        <nav class="nav-bar">
+          <div class="nav-container"> 
+            <a id="nav-menu" class="nav-menu">&#9776; Menu</a>
+            <ul class="nav-list " id="nav">
+              <li> <a href="#" id="tile1"><i class="icon ion-ios7-home-outline"></i> Home</a></li>
+              <li> <a href="#" id="tile2"><i class="icon ion-ios7-person-outline"></i> Aluno</a></li>
+              <li> <a href="#" id="tile3"><i class="icon ion-ios7-briefcase-outline"></i> Professor</a></li>
+              <li> <a href="#" id="tile7"><i class="ion-ios7-paper-outline"></i> Sobre</a></li>
+              <li> <a href="#" id="tile8"><i class="ion-ios7-email-outline"></i> Contact</a></li>
+            </ul>
+          </div>
+        </nav>
 
-			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-			<a class="next" onclick="plusSlides(1)">&#10095;</a>
-		</div>
-		<br>
+      </div>
 
-		<div style="text-align:center">
-			<span class="dot" onclick="currentSlide(1)"></span> 
-			<span class="dot" onclick="currentSlide(2)"></span> 
-			<span class="dot" onclick="currentSlide(3)"></span> 
-		</div>
-	</body>
- </html>
+    </header>
+
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="{% static 'img/estudantes.jpeg' %}" style="width:109%">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="{% static 'img/layout.jpeg' %}" style="width:109%">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="{% static 'img/new.jpeg' %}" style="width:113%">
+        <div class="text"></div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+  </body>
+</html>

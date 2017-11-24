@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+  <head>
+    {% load staticfiles %}
+    <title>Portal - Aluno </title>
+    <meta charset="utf-8"/>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/EstiloPortal.css' %}"/>
+
+    <!--Link de Fontes-->
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id="lateral">
+      <div id="menu">
+        <h3 class="link-titulo">Secretaria</h3>
+        <ul class="box">					
+          <li><a href="boletimA.html">Boletim</a></li>
+          <li><a href="calendario-geral.html">Calendário de Aulas</a></li>
+          <li ><a href="horario-aulas.html">Horário das Aulas</a></li>
+          <li ><a href="dadosA.html">Alterar Dados</a></li>
+
+        </ul>
+        <h3 class="link-titulo">Financeiro</h3>
+        <ul class="box">
+          <li><a href="pagamentos.html">Pagamentos</a></li>
+        </ul>
+        <h3 class="link-titulo">Acesso as Aulas</h3>
+        <ul class="box">					
+          <li><a href="AulasGravadas.html">Aulas Gravadas </a></li> 			
+          <li><a href="entrega-trabalho.html">Entrega de Trabalhos</a></li> 		
+          <li><a href="entrega-atividades.html">Entrega de Atividades</a></li> 	
+
+        </ul>
+      </div> 
+    </div>
+    <p>Entrega das Atividades</p><hr class="hr-trabalho">
+    <br>
+    <span class="legenda">Legenda</span>
+    <div class="semaforo">
+      <img src="{% static 'img/semaforo.png' %}"></img> 
+    </div>
+    <div class="vermelho">
+      <h4> Você está atrasado para entraga da atividade.</h4><br>
+    </div>
+    <div class="amarelo">
+      <h4> Você está preste a se atrasar.</h4><br>
+    </div>
+    <div class="verde">
+      <h4> Você está em dia com suas atividades.</h4>
+    </div>
+
+    <br><br><br><br><br><br><hr>
+    <div class="materias">
+      <h4>Disciplina:</h4>
+      <select required class="caixa-materia">
+        <option disabled value="Selecione a Disciplina">Selecione a Disciplina</option>
+        <option value="LPII">Linguagem de Programação II</option>
+      </select>
+      <button class="botao" type="submit">Pesquisar</button>
+    </div>
+
+    <div id="footer" class="footer" data-bind="css: { 'default': !backgroundLogoUrl() }"> 
+      <div>
+        <span id="ftrCopy" data-bind="html: svr.B2"><center>©2017 Royal Tech</center></span>
+      </div> 
+    </div> 
+  </body>
+</html>

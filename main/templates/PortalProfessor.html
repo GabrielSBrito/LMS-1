@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load staticfiles %}
+    <title>Portal - Professor </title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/EstiloPortal.css' %}"/>
+
+
+    <!--Link de Fontes-->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+  </head>
+  <body background="{% static 'img/fundoportal.png' %}">
+
+    <div id="lateral">
+      <div id="menu">
+        <h3 class="link-titulo">Secretaria</h3>
+        <ul class="box">					
+          <li><a href="lancarNotas.html">Boletim</a></li>
+          <li><a href="calendario-geral.html">Calendário de Aulas</a></li>
+          <li ><a href="horario-aulas.html">Horário das Aulas</a></li>
+          <li ><a href="dadosP.html">Alterar Dados</a></li>
+        </ul>
+        <h3 class="link-titulo">Financeiro</h3>
+        <ul class="box">
+          <li><a href="pagamentos.html">Pagamentos</a></li>
+        </ul>
+        <h3 class="link-titulo">Acesso as Aulas</h3>
+        <ul class="box">					
+          <li><a href="SubirAula.html">Subir Aula</a></li> 			
+          <li><a href="entrega-trabalhoP.html">Entrega de Trabalhos</a></li> 		
+          <li><a href="entrega-atividadesP.html">Entrega de Atividades</a></li> 	
+
+        </ul>
+
+      </div> 
+    </div>
+    <br><br>
+    <div class="base">
+
+      <div class="row-fluid">
+        <img id="LoginPicture" src="{% static 'img/foto.png' %}"></div>
+      <!--<input type="file">-->
+      <span><div class="DPessoaisP" id="LoginContent">
+          <div class="row-fluid">
+            <div class="span4">
+              <div class="p"><h6>Nome:</h6><p></p> <strong>Professor</strong></div>
+              <div class="p"><h6>RA:</h6><p></p> <strong>###### </strong></div>
+            </div>
+            <div class="span8">
+              <div class="p"><h6>Disciplina:</h6><p></p> <strong>Matéria</strong></div>
+            </div>
+          </div>
+        </div>
+        <button class="botao-dados" type="submit"><a href="dadosP.html">Alterar Dados</a></button>
+        <button class="botao-sair"><span><a href="index.html">Sair</a></span></button>
+
+    </div>
+    <br><br><br>
+    <div>
+      <fieldset class="mural">
+        <center><h1>Mural de Recados<hr></h1></center>
+        <div class="recado1">
+          <h3>Planejamento Mensal</h3><br>
+          <h5>Peço que se atentam ao nosso 
+            <br>planejamento 
+            mensal para que assim<br> possamos dar
+            continuidade ao que<br> espamos durante 
+            nosso ano letivo.</h5>
+        </div>
+
+        <div class="recado2">
+          <h3>Entrega de Notas</h3><br>
+          <h5>Preciso de varias coisas.</h5>
+        </div>
+
+        <div class="recado3">
+          <h3>Reunião </h3><br>
+          <h5>No dia 29/11 teremos uma
+            <strong>reunião </strong>para definição
+            de novas turma em nossos cursos.</h5>
+        </div>
+      </fieldset>
+    </div>
+
+    <div id="footer" class="footer" data-bind="css: { 'default': !backgroundLogoUrl() }"> 
+      <div>
+        <span id="ftrCopy" data-bind="html: svr.B2"><center>©2017 Royal Tech</center></span>
+      </div> 
+    </div> 
+  </body>
+</html>
