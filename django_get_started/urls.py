@@ -12,7 +12,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'main.views.loginAluno', name='home'),
+    url(r'^$', 'main.views.index', name='home'),
     url(r'^portal$', 'main.views.portalAluno', name='Portal'),
     url(r'^portal/boletim$', 'main.views.boletimAluno', name='Boletim'),
     url(r'^portal/dados/aluno$', 'main.views.dadosAluno', name='DadosAluno'),
