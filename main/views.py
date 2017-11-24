@@ -23,3 +23,18 @@ def calendarioGeral(request):
 
 def entregaAtividades(request):
         return render(request, "entrega-atividades.html")
+
+def portalProfessor(request):
+        return render(request, "PortalProfessor.html")
+
+def lancarNotas(request):
+        return render(request, "lancarNotas.html")
+
+def dadosProfessor(request):
+        return render(request, "dadosP.html")
+
+def subirAula(request):
+        return render(request, "SubirAula.html")
+
+def aulasGravadas(request):
+        return render(request, "AulasGravadas.html")
