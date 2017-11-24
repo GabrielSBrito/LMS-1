@@ -40,7 +40,12 @@ def subirAula(request):
 def aulasGravadas(request):
         return render(request, "AulasGravadas.html")
 
-def handler404(request):
-        response = render_to_response('404.html', {}, context_instance=RequestContext(request))
-        response.status_code = 404
-        return response
+def bad_request(request):
+  response = render_to_response(
+    '400.html',
+    context_instance=RequestContext(request)
+    )
+
+    response.status_code = 400
+
+    return response

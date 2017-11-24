@@ -3,10 +3,8 @@ Definition of urls for django_get_started.
 """
 
 from datetime import datetime
-from django.conf.urls import patterns, url, include
+from django.conf.urls import patterns, url, include, handler400
 from app.forms import BootstrapAuthenticationForm
-
-
 from django.contrib import admin
 admin.autodiscover()
 
@@ -28,3 +26,5 @@ urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
+
+handler400 = 'main.views.bad_request'
