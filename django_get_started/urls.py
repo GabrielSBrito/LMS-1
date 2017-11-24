@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     url(r'^portal/dados/aluno$', 'main.views.dadosAluno', name='DadosAluno'),
     url(r'^portal/dados/professor$', 'main.views.dadosProfessor', name='DadosProfessor'),
     url(r'^portal/calendario-geral$', 'main.views.calendarioGeral', name='calendarioGeral'),
+    url(r'^portal/entrega-atividades$', 'main.views.entregaAtividades', name='entregaAtividades'),
 
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),

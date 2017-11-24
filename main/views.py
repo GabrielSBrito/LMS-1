@@ -20,3 +20,6 @@ def dadosProfessor(request):
 
 def calendarioGeral(request):
         return render(request, "entrega-atividades.html")
+
+def entregaAtividades(request):
+        return render(request, "entrega-atividades.html")
