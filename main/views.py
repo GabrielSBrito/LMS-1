@@ -88,7 +88,7 @@ def login(request):
                                 login = '0'
 
                         
-                                if login is not 0:
+                                if login is not '0':
                                         username = login.usuario_nome
                                         ra = login.usuario_ra
                                         userid = login.usuario_id
