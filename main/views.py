@@ -10,7 +10,9 @@ def index(request):
         form = LoginForm(request.POST or None)
         if request.session.has_key('username'):
                 username = request.session['username']
-                return render(request, "PortalAluno.html", {'username': username})
+                ra = request.session['user_ra']
+                id = request.session['user_id']
+                return render(request, "PortalAluno.html", {'username': username, 'ra': ra})
 	return render(request, "loginAluno.html", {'form': form})
 
 def portalAluno(request):
@@ -62,6 +64,7 @@ def login(request):
                                 username = login.user_nome
                                 request.session['username'] = username
                                 request.session['user_id'] = login.user_id
+                                request.session['user_ra'] = login.user_ra
                                 return render(request, "PortalAluno.html", {'username': username})
 
         return render(request, "loginAluno.html", {'trigger': 'Usuario nao encontrado'})
