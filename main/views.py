@@ -4,6 +4,7 @@ from django.template import RequestContext
 from models import Usuario
 from forms import LoginForm, formDadosA
 
+
 # Create your views here.
 
 def index(request):
@@ -105,5 +106,8 @@ def logout(request):
                 pass
         
         return redirect(index)
+
+        
+
 
 	
