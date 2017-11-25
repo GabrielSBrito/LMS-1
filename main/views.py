@@ -79,31 +79,30 @@ def login(request):
 
                 if formLogin.is_valid():
                         ra_user = formLogin.cleaned_data['usuario_ra']
-                        
                         pass_user = formLogin.cleaned_data['usuario_password']
                         
                         try:
-                                login = Usuario.objects.get(usuario_ra = ra_user, usuario_password  = pass_user)
+                            login = Usuario.objects.get(usuario_ra = ra_user, usuario_password  = pass_user)
                         except Usuario.DoesNotExist:
-                                login = '0'
-
+                            login = '0'
+                            
                         
-                                if login is not '0':
-                                        username = login.usuario_nome
-                                        ra = login.usuario_ra
-                                        userid = login.usuario_id
-                                        user_level = login.usuario_nivel
-                                        user_email = login.usuario_email
+                        if login is not '0':
+                                username = login.usuario_nome
+                                ra = login.usuario_ra
+                                userid = login.usuario_id
+                                user_level = login.usuario_nivel
+                                user_email = login.usuario_email
 
-                                        request.session['username'] = username
-                                        request.session['user_id'] = userid
-                                        request.session['user_ra'] = ra
-                                        request.session['user_level'] = user_level
-                                        request.session['user_email'] = user_email
+                                request.session['username'] = username
+                                request.session['user_id'] = userid
+                                request.session['user_ra'] = ra
+                                request.session['user_level'] = user_level
+                                request.session['user_email'] = user_email
 
-                                        return render(request, "PortalAluno.html", {'username': username, 'ra': ra})
-
-        return render(request, "loginAluno.html", {'form': formLogin, 'trigger': 'Usuario nao encontrado'})
+                                return render(request, "PortalAluno.html", {'username': username, 'ra': ra})
+                                
+                return render(request, "loginAluno.html", {'form': formLogin, 'trigger': 'Usuario nao encontrado'})
 
 def logout(request):
         try:
