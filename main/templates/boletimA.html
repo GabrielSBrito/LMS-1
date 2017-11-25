@@ -21,10 +21,10 @@
       <div id="menu">
         <h3 class="link-titulo">Secretaria</h3>
         <ul class="box">					
-          <li><a href="boletimA.html">Boletim</a></li>
-          <li><a href="calendario-geral.html">Calendário de Aulas</a></li>
+          <li><a href="{% url 'Boletim' %}">Boletim</a></li>
+          <li><a href="{% url 'calendarioGeral' %}">Calendário de Aulas</a></li>
           <li ><a href="horario-aulas.html">Horário das Aulas</a></li>
-          <li ><a href="dadosA.html">Alterar Dados</a></li>
+          <li ><a href="{% url 'DadosAluno' %}">Alterar Dados</a></li>
 
         </ul>
         <h3 class="link-titulo">Financeiro</h3>
@@ -33,9 +33,9 @@
         </ul>
         <h3 class="link-titulo">Acesso as Aulas</h3>
         <ul class="box">					
-          <li><a href="AulasGravadas.html">Aulas Gravadas </a></li> 			
+          <li><a href="{% url 'aulasGravadas' %}">Aulas Gravadas </a></li> 			
           <li><a href="entrega-trabalho.html">Entrega de Trabalhos</a></li> 		
-          <li><a href="entrega-atividades.html">Entrega de Atividades</a></li> 	
+          <li><a href="{% url 'entregaAtividades' %}">Entrega de Atividades</a></li> 	
 
         </ul>
       </div> 
@@ -48,8 +48,8 @@
       <span><div class="DPessoaisA" id="LoginContent">
           <div class="row-fluid">
             <div class="span4">
-              <div class="p"><h6>Nome:</h6><p></p> <strong>Aluno</strong></div>
-              <div class="p"><h6>RA:</h6><p></p> <strong>###### </strong></div>
+              <div class="p"><h6>Nome:</h6><p></p> <strong>{{ username }}</strong></div>
+              <div class="p"><h6>RA:</h6><p></p> <strong>{{ ra }} </strong></div>
             </div>
             <div class="span8">
               <div class="p"><h6>Curso:</h6><p></p> <strong>Matéria</strong></div>

@@ -19,6 +19,12 @@ def portalAluno(request):
         return render(request, "PortalAluno.html")
 
 def boletimAluno(request):
+        if request.session.has_key('username') and request.session.has_key('user_ra') and request.session.has_key('user_id'):
+                username = request.session['username']
+                user_ra = request.session['user_ra']
+                userid = request.session['user_id']
+                return render(request, "boletimA.html", {'username': username, 'ra': user_ra})
+
         return render(request, "boletimA.html")
 
 def dadosAluno(request):
