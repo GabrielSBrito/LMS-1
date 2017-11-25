@@ -13,9 +13,8 @@ class LoginForm(forms.ModelForm):
 
 class formDadosA(forms.ModelForm):
 	usuario_nome = forms.CharField(label="Nome", widget= forms.TextInput(attrs={'class': 'input-xlarge', 'placeholder': 'Nome'}))
-	usuario_ra = forms.CharField(label="RA", widget= forms.TextInput(attrs={'class': 'input-xlarge', 'placeholder': 'RA'}))
 	usuario_email = forms.CharField(label="E-mail", widget= forms.TextInput(attrs={'class': 'input-xlarge', 'placeholder': 'E-mailRA'}))
 
 	class Meta:
 		model = Usuario
-		fields = ['usuario_nome', 'usuario_ra', 'usuario_email']
+		fields = ['usuario_nome', 'usuario_email']
