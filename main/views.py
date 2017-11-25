@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, render_to_response
 from django.http import HttpResponse
 from django.template import RequestContext
 from models import Usuario
-from forms import LoginForm
+from forms import LoginForm, formDadosA
 
 # Create your views here.
 
@@ -28,19 +28,19 @@ def boletimAluno(request):
         return render(request, "boletimA.html")
 
 def dadosAluno(request, ra_aluno):
-
         aluno = Usuario.objects.get(usuario_ra = ra_aluno)
 
-        if(request.session['user_ra'] == aluno.usuario_ra):
-                ra_aluno = request.session['user_ra']
-                form = formDadosA(request.POST or None, instance= aluno)
+        if(not request.session['user_ra']):
+                return redirect(index)
 
-	        if request.method == 'POST':
-	                if form.is_valid():
-			        form.save()
-			        return render(request, 'dadosA.html', {'form': form})
+        form = formDadosA(request.POST or None, instance= aluno)
+
+        if request.method == 'POST':
+                if form.is_valid():
+                        form.save()
+                        return render(request, 'dadosA.html', {'form': form, 'ra': ra_aluno})
 	
-        return redirect(index)
+        return render(request, 'dadosA.html', {'form': form})
 
 def dadosProfessor(request):
         return render(request, "dadosP.html")
