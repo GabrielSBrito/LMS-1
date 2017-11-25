@@ -102,8 +102,8 @@ def login(request):
                                         request.session['user_email'] = user_email
 
                                         return render(request, "PortalAluno.html", {'username': username, 'ra': ra})
-                                
-        return render(request, "loginAluno.html", {'form': form, 'trigger': 'Usuario nao encontrado'})
+
+        return render(request, "loginAluno.html", {'form': formLogin, 'trigger': 'Usuario nao encontrado'})
 
 def logout(request):
         try:
