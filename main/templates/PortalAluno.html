@@ -11,10 +11,10 @@
       <div id="menu">
         <h3 class="link-titulo">Secretaria</h3>
         <ul class="box">					
-          <li><a href="boletim">Boletim</a></li>
-          <li><a href="calendario-geral">Calendário de Aulas</a></li>
+          <li><a href="{% url 'Boletim' %}">Boletim</a></li>
+          <li><a href="{% url 'calendarioGeral' %}-geral">Calendário de Aulas</a></li>
           <li ><a href="#">Horário das Aulas</a></li>
-          <li ><a href="dados/aluno">Alterar Dados</a></li>
+          <li ><a href="{% url 'DadosAluno' %}">Alterar Dados</a></li>
 
         </ul>
         <h3 class="link-titulo">Financeiro</h3>
@@ -23,9 +23,9 @@
         </ul>
         <h3 class="link-titulo">Acesso as Aulas</h3>
         <ul class="box">					
-          <li><a href="aulas-gravadas">Aulas Gravadas</a></li> 			
+          <li><a href="{% url 'aulasGravadas' %}">Aulas Gravadas</a></li> 			
           <li><a href="#">Entrega de Trabalhos</a></li> 		
-          <li><a href="entrega-atividades">Entrega de Atividades</a></li> 	
+          <li><a href="{% url 'entregaAtividades' %}">Entrega de Atividades</a></li> 	
 
         </ul>
       </div> 
