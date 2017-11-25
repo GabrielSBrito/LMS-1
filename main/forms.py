@@ -8,5 +8,5 @@ class LoginForm(forms.ModelForm):
 	user_password = forms.CharField(label="Senha", widget= forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Senha', 'required': 'required'}))
 	
 	class Meta:
-		
+		model = Usuario
 		fields = ['user_ra', 'user_password']
