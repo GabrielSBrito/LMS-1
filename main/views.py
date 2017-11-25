@@ -64,7 +64,7 @@ def subirAula(request):
         return render(request, "SubirAula.html")
 
 def aulasGravadas(request):
-        return render(request, "AulasGravadas.html")
+        return render(request, "AulasGravadas.html", {'ra' : request.session['user_ra']})
 
 def bad_request(request):
         response = render_to_response('400.html', context_instance=RequestContext(request))
@@ -84,9 +84,15 @@ def login(request):
                                 username = login.usuario_nome
                                 ra = login.usuario_ra
                                 userid = login.usuario_id
+                                user_level = login.usuario_nivel
+                                user_email = login.usuario_email
+
                                 request.session['username'] = username
                                 request.session['user_id'] = userid
                                 request.session['user_ra'] = ra
+                                request.session['user_level'] = user_level
+                                request.session['user_email'] = user_email
+
                                 return render(request, "PortalAluno.html", {'username': username, 'ra': ra})
         return render(request, "loginAluno.html", {'form': form, 'trigger': 'Usuario nao encontrado'})
 
