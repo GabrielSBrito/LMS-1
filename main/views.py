@@ -63,4 +63,4 @@ def login(request):
                                 request.session['user_id'] = login.user_id
                                 return render(request, "PortalAluno.html", {'username': username})
 
-        return render(request, "loginAluno.html", {'trigger': 'Usuário não encontrado!'})
+        return render(request, "loginAluno.html", {'trigger': 'Usuario nao encontrado'})
