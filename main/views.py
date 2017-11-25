@@ -59,13 +59,13 @@ def login(request):
                 formLogin = LoginForm(request.POST)
 
                 if formLogin.is_valid():
-                        login = Usuario.objects.get(user_ra = formLogin.cleaned_data['user_ra'], user_password  = formLogin.cleaned_data['user_password'])
-                        if login.user_id > 1:
-                                username = login.user_nome
-                                ra = login.user_ra
-                                userid = login.user_id
+                        login = Usuario.objects.get(usuario_ra = formLogin.cleaned_data['usuario__ra'], usuario_password  = formLogin.cleaned_data['usuario_password'])
+                        if login.usuario_id > 1:
+                                username = login.usuario_nome
+                                ra = login.usuario_ra
+                                userid = login.usuario_id
                                 request.session['username'] = username
-                                request.session['user_id'] = userid
+                                request.session['usuario_id'] = userid
                                 request.session['user_ra'] = ra
 
         return render(request, "loginAluno.html", {'trigger': 'Usuario nao encontrado'})
