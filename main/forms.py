@@ -14,7 +14,8 @@ class LoginForm(forms.ModelForm):
 class formDadosA(forms.ModelForm):
 	usuario_nome = forms.CharField(label="Nome", widget= forms.TextInput(attrs={'class': 'input-xlarge', 'placeholder': 'Nome'}))
 	usuario_email = forms.CharField(label="E-mail", widget= forms.TextInput(attrs={'class': 'input-xlarge', 'placeholder': 'E-mailRA'}))
-
+	usuario_password = forms.CharField(label="Senha", widget= forms.PasswordInput(attrs={'class': 'input-xlarge', 'placeholder': 'Senha', 'required': 'required'}))
+	
 	class Meta:
 		model = Usuario
-		fields = ['usuario_nome', 'usuario_email']
+		fields = ['usuario_nome', 'usuario_email', 'usuario_password']
