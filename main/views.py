@@ -56,7 +56,7 @@ def login(request):
                 formLogin = LoginForm(request.POST)
 
                 if formLogin.is_valid():
-                        login = Usuario.objects.get(user_ra = formLogin.user_ra and user_password  = formLogin.user_password)
+                        login = Usuario.objects.get(user_ra = formLogin.user_ra, user_password  = formLogin.user_password)
                         if login.user_id > 1:
                                 username = login.user_nome
                                 request.session['username'] = username
