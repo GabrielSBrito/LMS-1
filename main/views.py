@@ -8,7 +8,7 @@ from forms import LoginForm
 
 def index(request):
         form = LoginForm(request.POST or None)
-        if request.session_has_key('username'):
+        if request.session.has_key('username'):
                 username = request.session['username']
                 return render(request, "PortalAluno.html", {'username': username})
 	return render(request, "loginAluno.html", {'form': form})
