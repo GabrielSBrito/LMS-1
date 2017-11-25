@@ -1,11 +1,16 @@
 from django.shortcuts import render, redirect, render_to_response
 from django.http import HttpResponse
 from django.template import RequestContext
+from models import Usuario
 
 # Create your views here.
 
 def index(request):
-	return render(request, "loginAluno.html")
+        form = LoginForm(request.POST or None)
+        if request.session_has_key('username'):
+                username = request.session['username']
+                return render(request, "PortalAluno.html", {'username': username})
+	return render(request, "loginAluno.html", {'form': form})
 
 def portalAluno(request):
         return render(request, "PortalAluno.html")
@@ -44,3 +49,18 @@ def bad_request(request):
         response = render_to_response('400.html', context_instance=RequestContext(request))
         response.status_code = 400
         return response
+
+def login(request):
+        
+        if request.method == 'POST':
+                formLogin = LoginForm(request.POST)
+
+                if formLogin.is_valid():
+                        login = Usuario.objects.get(user_ra = formLogin.user_ra and user_password  = formLogin.user_password)
+                        if login.user_id > 1:
+                                username = login.user_nome
+                                request.session['username'] = username
+                                request.session['user_id'] = login.user_id
+                                return render(request, "PortalAluno.html", {'username': username})
+
+        return render(request, "loginAluno.html", {'trigger': 'Usuário não encontrado!'})

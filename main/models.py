@@ -1,7 +1,7 @@
 from django.db import models
 import datetime
 
-class Contato(models.Model):
+class Usuario(models.Model):
 
 	SEXO_CHOICES = (
 		(u'masculino', u'Masculino'),
@@ -12,11 +12,19 @@ class Contato(models.Model):
 		(u'solteiro', u'Solteiro'),
 		(u'casado', u'Casado'),
 		)
+	
+	NIVEIS_CHOICES = (
+		(u'1', u'Aluno'),
+		(u'2', u'Professor'),
+		(u'3', u'Coordenador'),
+	)
 
-	contato_id = models.AutoField(primary_key=True)
-	contato_nome = models.CharField(max_length=50)
-	contato_nascimento = models.DateField()
-	contato_sexo = models.CharField(max_length=50, choices = SEXO_CHOICES)
-	contato_estado_civil = models.CharField(max_length=50, choices= ESTADO_CIVIL_CHOICES, verbose_name='Estado Civil')
-	contato_email = models.CharField(max_length=50)
-	contato_favorito = models.BooleanField(verbose_name='Favorito')
+	user_id = models.AutoField(primary_key=True)
+	user_ra = models.CharField(max_length=50)
+	user_nome = models.CharField(max_length=50)
+	user_nascimento = models.DateField()
+	user_sexo = models.CharField(max_length=50, choices = SEXO_CHOICES)
+	user_estado_civil = models.CharField(max_length=50, choices= ESTADO_CIVIL_CHOICES, verbose_name='Estado Civil')
+	user_email = models.CharField(max_length=50)
+	user_nivel = models.CharField(max_length=50, choices = NIVEIS_CHOICES, verbose_name='Nível')
+	user_password = models.CharField(max_length=50)
