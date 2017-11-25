@@ -68,3 +68,15 @@ def login(request):
                                 return render(request, "PortalAluno.html", {'username': username})
 
         return render(request, "loginAluno.html", {'trigger': 'Usuario nao encontrado'})
+
+def logout(request):
+        try:
+                del request.session['username']
+                del request.session['user_id']
+                del request.session['user_ra']
+        except:
+                pass
+        
+        return render(request, "loginAluno.html", {'trigger': 'Voce saiu com sucesso'})
+
+   
