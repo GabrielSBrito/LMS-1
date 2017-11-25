@@ -68,7 +68,7 @@ def login(request):
                                 request.session['usuario_id'] = userid
                                 request.session['user_ra'] = ra
 
-        return render(request, "loginAluno.html", {'trigger': 'Usuario nao encontrado'})
+        return render(request, "loginAluno.html", {'form': form, 'trigger': 'Usuario nao encontrado'})
 
 def logout(request):
         try:
