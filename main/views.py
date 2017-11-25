@@ -59,7 +59,7 @@ def login(request):
                 formLogin = LoginForm(request.POST)
 
                 if formLogin.is_valid():
-                        login = Usuario.objects.get(usuario_ra = formLogin.cleaned_data['usuario__ra'], usuario_password  = formLogin.cleaned_data['usuario_password'])
+                        login = Usuario.objects.get(usuario_ra = formLogin.cleaned_data['usuario_ra'], usuario_password  = formLogin.cleaned_data['usuario_password'])
                         if login.usuario_id > 1:
                                 username = login.usuario_nome
                                 ra = login.usuario_ra
