@@ -27,8 +27,20 @@ def boletimAluno(request):
 
         return render(request, "boletimA.html")
 
-def dadosAluno(request):
-        return render(request, "dadosA.html")
+def dadosAluno(request, ra_aluno):
+
+        aluno = Usuario.objects.get(usuario_ra = ra_aluno)
+
+        if(request.session['user_ra'] == aluno.usuario_ra):
+                ra_aluno = request.session['user_ra']
+                form = formDadosA(request.POST or None, instance= aluno)
+
+	        if request.method == 'POST':
+	                if form.is_valid():
+			        form.save()
+			        return render(request, 'dadosA.html', {'form': form})
+	
+        return redirect(index)
 
 def dadosProfessor(request):
         return render(request, "dadosP.html")
@@ -88,4 +100,4 @@ def logout(request):
         
         return redirect(index)
 
-   
+	

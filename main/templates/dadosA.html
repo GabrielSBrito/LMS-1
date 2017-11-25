@@ -55,7 +55,8 @@
                 Nome:
               </label>
               <div class="controls">
-                <input type="text" class="input-xlarge" id="txtfield-nome" name="nome" >
+               <!-- <input type="text" class="input-xlarge" id="txtfield-nome" name="nome" > -->
+               {{ form.usuario_nome }}
                 <span class="needed">* Nome deve estar igual Receita Federal</span>
               </div>
             </div>
@@ -65,7 +66,8 @@
                 E-Mail:
               </label>
               <div class="controls">
-                <input type="text" class="input-xlarge" id="txtfield-email" name="email" >
+                <!-- <input type="text" class="input-xlarge" id="txtfield-email" name="email" > -->
+                {{ form.usuario_email }}
                 <span class="needed">* Deve ser um E-mai válido.</span>
               </div>
             </div>
