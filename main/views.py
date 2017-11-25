@@ -59,7 +59,9 @@ def login(request):
                 formLogin = LoginForm(request.POST)
 
                 if formLogin.is_valid():
-                        login = Usuario.objects.get(usuario_ra = formLogin.cleaned_data['usuario_ra'], usuario_password  = formLogin.cleaned_data['usuario_password'])
+                        ra_user = formLogin.cleaned_data['usuario_ra']
+                        pass_user formLogin.cleaned_data['usuario_password']
+                        login = Usuario.objects.get(usuario_ra = ra_user, usuario_password  = pass_user)
                         if login.usuario_id > 1:
                                 username = login.usuario_nome
                                 ra = login.usuario_ra
@@ -67,7 +69,7 @@ def login(request):
                                 request.session['username'] = username
                                 request.session['usuario_id'] = userid
                                 request.session['user_ra'] = ra
-
+                                return render(request, "PortalAluno.html", {'username': username, 'ra': ra})
         return render(request, "loginAluno.html", {'form': form, 'trigger': 'Usuario nao encontrado'})
 
 def logout(request):
