@@ -8,11 +8,11 @@ from forms import LoginForm
 
 def index(request):
         form = LoginForm(request.POST or None)
-        if request.session.has_key('username'):
+        if request.session.has_key('username') and request.session.has_key('user_ra') and request.session.has_key('user_id'):
                 username = request.session['username']
-                ra = request.session['user_ra']
-                id = request.session['user_id']
-                return render(request, "PortalAluno.html", {'username': username, 'ra': ra})
+                user_ra = request.session['user_ra']
+                userid = request.session['user_id']
+                return render(request, "PortalAluno.html", {'username': username, 'ra': user_ra})
 	return render(request, "loginAluno.html", {'form': form})
 
 def portalAluno(request):
@@ -59,13 +59,14 @@ def login(request):
                 formLogin = LoginForm(request.POST)
 
                 if formLogin.is_valid():
-                        login = Usuario.objects.get(user_ra = formLogin.user_ra, user_password  = formLogin.user_password)
+                        login = Usuario.objects.get(user_ra = formLogin.cleaned_data['user_ra'], user_password  = formLogin.cleaned_data['user_password'])
                         if login.user_id > 1:
                                 username = login.user_nome
+                                ra = login.user_ra
+                                userid = login.user_id
                                 request.session['username'] = username
-                                request.session['user_id'] = login.user_id
-                                request.session['user_ra'] = login.user_ra
-                                return render(request, "PortalAluno.html", {'username': username})
+                                request.session['user_id'] = userid
+                                request.session['user_ra'] = ra
 
         return render(request, "loginAluno.html", {'trigger': 'Usuario nao encontrado'})
 
@@ -77,6 +78,6 @@ def logout(request):
         except:
                 pass
         
-        return render(request, "loginAluno.html", {'trigger': 'Voce saiu com sucesso'})
+        return redirect(index)
 
    
