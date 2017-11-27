@@ -16,12 +16,11 @@ def index(request):
                 userid = request.session['user_id']
                 
                 if request.session['user_level'] == '1':
-                        return render(request, "PortalAluno.html", {'username': username, 'ra': ra})
+                        return render(request, "PortalAluno.html", {'username': username, 'ra': user_ra})
                 else:
-                        return render(request, "PortalProfessor.html", {'username': username, 'ra': ra})
+                        return render(request, "PortalProfessor.html", {'username': username, 'ra': user_ra})
 
-                return render(request, "PortalAluno.html", {'username': username, 'ra': user_ra})
-	
+                	
         return render(request, "loginAluno.html", {'form': form})
 
 def portalAluno(request):

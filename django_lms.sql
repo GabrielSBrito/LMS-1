@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:57152
--- Generation Time: Nov 25, 2017 at 10:40 AM
+-- Generation Time: Nov 27, 2017 at 12:25 PM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.31
 
@@ -87,7 +87,13 @@ INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALU
 (27, 'Can delete log entry', 9, 'delete_logentry'),
 (28, 'Can add usuario', 10, 'add_usuario'),
 (29, 'Can change usuario', 10, 'change_usuario'),
-(30, 'Can delete usuario', 10, 'delete_usuario');
+(30, 'Can delete usuario', 10, 'delete_usuario'),
+(31, 'Can add notas', 12, 'add_notas'),
+(32, 'Can change notas', 12, 'change_notas'),
+(33, 'Can delete notas', 12, 'delete_notas'),
+(34, 'Can add disciplinas', 11, 'add_disciplinas'),
+(35, 'Can change disciplinas', 11, 'change_disciplinas'),
+(36, 'Can delete disciplinas', 11, 'delete_disciplinas');
 
 -- --------------------------------------------------------
 
@@ -180,6 +186,8 @@ INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
 (1, 'auth', 'permission'),
 (3, 'auth', 'user'),
 (4, 'contenttypes', 'contenttype'),
+(11, 'main', 'disciplinas'),
+(12, 'main', 'notas'),
 (10, 'main', 'usuario'),
 (5, 'sessions', 'session'),
 (6, 'sites', 'site');
@@ -202,21 +210,7 @@ CREATE TABLE `django_migrations` (
 --
 
 INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
-(17, 'main', '0001_initial', '2017-11-25 14:59:02.921000'),
-(18, 'contenttypes', '0001_initial', '2017-11-25 15:09:04.358000'),
-(19, 'auth', '0001_initial', '2017-11-25 15:09:04.389000'),
-(20, 'admin', '0001_initial', '2017-11-25 15:09:04.421000'),
-(21, 'admin', '0002_logentry_remove_auto_add', '2017-11-25 15:09:04.452000'),
-(22, 'contenttypes', '0002_remove_content_type_name', '2017-11-25 15:09:04.483000'),
-(23, 'auth', '0002_alter_permission_name_max_length', '2017-11-25 15:09:04.500000'),
-(24, 'auth', '0003_alter_user_email_max_length', '2017-11-25 15:09:04.530000'),
-(25, 'auth', '0004_alter_user_username_opts', '2017-11-25 15:09:04.577000'),
-(26, 'auth', '0005_alter_user_last_login_null', '2017-11-25 15:09:04.593000'),
-(27, 'auth', '0006_require_contenttypes_0002', '2017-11-25 15:09:04.624000'),
-(28, 'auth', '0007_alter_validators_add_error_messages', '2017-11-25 15:09:04.655000'),
-(29, 'sessions', '0001_initial', '2017-11-25 15:09:04.673000'),
-(30, 'sites', '0001_initial', '2017-11-25 15:09:04.702000'),
-(31, 'sites', '0002_alter_domain_unique', '2017-11-25 15:09:04.718000');
+(32, 'main', '0001_initial', '2017-11-27 18:32:57.820000');
 
 -- --------------------------------------------------------
 
@@ -235,10 +229,10 @@ CREATE TABLE `django_session` (
 --
 
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
-('0rltocs6cas2ny8fwgf0bb0jsm2z4kt5', 'OGY0YTIyODI4NzZhNmNmODdiMmZiOGNiOTZjNDVmNTIzZmNiYzk1Mjp7InVzZXJuYW1lIjoiTHVjYXMgQWxtZWlkYSIsInVzZXJfcmEiOiIxNzAwMTk1IiwidXNlcl9pZCI6M30=', '2017-12-09 15:50:26.368000'),
+('0rltocs6cas2ny8fwgf0bb0jsm2z4kt5', 'NThmZjg5ZTNjNTM0MzAzYWM3M2ZkNjY3Mzc0Y2ExMDUwYjc3MGEzMzp7InVzZXJfbGV2ZWwiOiIxIiwidXNlcl9lbWFpbCI6Imx1Y2FzZmFsbWVpZGExOTk4QGhvdG1haWwuY29tIn0=', '2017-12-09 23:41:27.025000'),
 ('8nnie2re4ar5aftzf5cm8b4vwjy8q3b1', 'OWIyYWJmY2MyMzVlMDczODMyNGVkYTQ5Yzk3NGU0ZTliOWY1N2Y4ZDp7InVzZXJuYW1lIjoiTGVhbmRybyBNYXRhZG9yIGRlIG9uXHUwMGU3YSIsInVzZXJfcmEiOiIxNzAwNjMxIiwidXNlcl9pZCI6NCwidXNlcl9sZXZlbCI6IjEiLCJ1c2VyX2VtYWlsIjoibGVhbmRyb0Bob3RtYWlsLmNvbSJ9', '2017-12-09 17:49:54.735000'),
 ('j8ebokm93upv44bf6depfb2rq42qzxnr', 'ZWZiNjQxYTI1ZWQ3OThiZTAxMjc4MmNhYTYwMjJlZDQ5YzlmZjNkYTp7fQ==', '2017-12-09 15:53:35.154000'),
-('s8491t59ab173xbdlykklnw6m1n7c37l', 'MTcyNzIzMDkwZTUwM2Q3MzFkMDNlZTVmNDg3NjYwYWE1OWI2ZTU4MTp7InVzZXJuYW1lIjoiWWFuIFNhbnRvcyBTaWx2YSIsInVzZXJfaWQiOjIsIl9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJ1c3VhcmlvX2lkIjoyLCJ1c2VyX2xldmVsIjoiMSIsInVzZXJfcmEiOiIxNjAwMTQyIiwiX2F1dGhfdXNlcl9oYXNoIjoiMzEwMTA3ZTJiN2VjNjRlNTdjMDM0NjY5MzI0NzUyM2QxYWQ3OGE5MCIsInVzZXJfZW1haWwiOiJ5eWFuZ3RvdUBnbWFpbC5jb20ifQ==', '2017-12-09 18:32:29.364000'),
+('s8491t59ab173xbdlykklnw6m1n7c37l', 'MjQ5MGRmZTkwOGQyODEzMTY5YTZmNzcwOTU3YTkzMWQyNWQwMmRlMjp7InVzZXJuYW1lIjoiUmVpbmFsZG8gVGFrYWkiLCJ1c2VyX2lkIjo1LCJfYXV0aF91c2VyX2lkIjoiMSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwidXN1YXJpb19pZCI6MiwidXNlcl9sZXZlbCI6IjIiLCJ1c2VyX3JhIjoiMTcwMDEiLCJfYXV0aF91c2VyX2hhc2giOiIzMTAxMDdlMmI3ZWM2NGU1N2MwMzQ2NjkzMjQ3NTIzZDFhZDc4YTkwIiwidXNlcl9lbWFpbCI6InJlaW5hbGRvVEtAZ21haWwuY29tIn0=', '2017-12-11 20:20:30.319000'),
 ('tvqebf1liyois74itigv0ocvpjzwt90w', 'NmI4OWU1OTViM2MwM2Q2OTBmYTFlYjU0YjhjNGIzZDVlOWZkMzVlOTp7Il9hdXRoX3VzZXJfaGFzaCI6IjMxMDEwN2UyYjdlYzY0ZTU3YzAzNDY2OTMyNDc1MjNkMWFkNzhhOTAiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', '2017-12-08 00:39:26.090000');
 
 -- --------------------------------------------------------
@@ -263,11 +257,47 @@ INSERT INTO `django_site` (`id`, `domain`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `main_disciplinas`
+--
+
+CREATE TABLE `main_disciplinas` (
+  `disciplina_id` int(11) NOT NULL,
+  `disciplina_nome` varchar(50) NOT NULL,
+  `disciplina_curso` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `main_disciplinas`
+--
+
+INSERT INTO `main_disciplinas` (`disciplina_id`, `disciplina_nome`, `disciplina_curso`) VALUES
+(3, 'sql', 'ads'),
+(4, 'tec', 'ads'),
+(5, 'es', 'ads'),
+(6, 'lpii', 'ads'),
+(7, 'gtp', 'ads');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `main_notas`
+--
+
+CREATE TABLE `main_notas` (
+  `nota_id` int(11) NOT NULL,
+  `nota_aluno_id` varchar(50) NOT NULL,
+  `nota_valor` varchar(50) NOT NULL,
+  `nota_disciplina` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `main_usuario`
 --
 
 CREATE TABLE `main_usuario` (
-  `usuario_id` int(11) UNSIGNED NOT NULL,
+  `usuario_id` int(11) NOT NULL,
   `usuario_ra` varchar(50) NOT NULL,
   `usuario_nome` varchar(50) NOT NULL,
   `usuario_nascimento` date NOT NULL,
@@ -275,17 +305,20 @@ CREATE TABLE `main_usuario` (
   `usuario_estado_civil` varchar(50) NOT NULL,
   `usuario_email` varchar(50) NOT NULL,
   `usuario_nivel` varchar(50) NOT NULL,
-  `usuario_password` varchar(50) NOT NULL
+  `usuario_password` varchar(50) NOT NULL,
+  `usuario_cursos` varchar(50) NOT NULL,
+  `usuario_notas` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `main_usuario`
 --
 
-INSERT INTO `main_usuario` (`usuario_id`, `usuario_ra`, `usuario_nome`, `usuario_nascimento`, `usuario_sexo`, `usuario_estado_civil`, `usuario_email`, `usuario_nivel`, `usuario_password`) VALUES
-(2, '1600142', 'Yan Santos Silva', '2017-11-13', 'masculino', 'solteiro', 'yyangtou@gmail.com', '1', '123456'),
-(3, '1700195', 'Lucas Almeida', '2017-11-13', 'masculino', 'solteiro', 'lucasfalmeida1998@hotmail.com', '1', '123456'),
-(4, '1700631', 'LEANDRO S SILVA', '2017-11-13', 'masculino', 'solteiro', 'leossone@gmail.com', '1', '123456');
+INSERT INTO `main_usuario` (`usuario_id`, `usuario_ra`, `usuario_nome`, `usuario_nascimento`, `usuario_sexo`, `usuario_estado_civil`, `usuario_email`, `usuario_nivel`, `usuario_password`, `usuario_cursos`, `usuario_notas`) VALUES
+(2, '1600142', 'Yan Santos Silva', '2017-11-13', 'masculino', 'solteiro', 'yyangtou@gmail.com', '1', '123456', '', ''),
+(3, '1700195', 'Lucas Almeida', '2017-11-13', 'masculino', 'solteiro', 'lucasfalmeida1998@hotmail.com', '1', '123456', '', ''),
+(4, '1700631', 'LEANDRO S SILVA', '2017-11-13', 'masculino', 'solteiro', 'leossone@gmail.com', '1', '123456', '', ''),
+(5, '17001', 'Reinaldo Takai', '2017-11-13', 'masculino', 'solteiro', 'reinaldoTK@gmail.com', '2', '123456', '', '');
 
 --
 -- Indexes for dumped tables
@@ -364,6 +397,18 @@ ALTER TABLE `django_site`
   ADD UNIQUE KEY `django_site_domain_a2e37b91_uniq` (`domain`);
 
 --
+-- Indexes for table `main_disciplinas`
+--
+ALTER TABLE `main_disciplinas`
+  ADD PRIMARY KEY (`disciplina_id`);
+
+--
+-- Indexes for table `main_notas`
+--
+ALTER TABLE `main_notas`
+  ADD PRIMARY KEY (`nota_id`);
+
+--
 -- Indexes for table `main_usuario`
 --
 ALTER TABLE `main_usuario`
@@ -387,7 +432,7 @@ ALTER TABLE `auth_group_permissions`
 -- AUTO_INCREMENT for table `auth_permission`
 --
 ALTER TABLE `auth_permission`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT for table `auth_user`
 --
@@ -407,22 +452,32 @@ ALTER TABLE `auth_user_user_permissions`
 -- AUTO_INCREMENT for table `django_content_type`
 --
 ALTER TABLE `django_content_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `django_migrations`
 --
 ALTER TABLE `django_migrations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT for table `django_site`
 --
 ALTER TABLE `django_site`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `main_disciplinas`
+--
+ALTER TABLE `main_disciplinas`
+  MODIFY `disciplina_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `main_notas`
+--
+ALTER TABLE `main_notas`
+  MODIFY `nota_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `main_usuario`
 --
 ALTER TABLE `main_usuario`
-  MODIFY `usuario_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Constraints for dumped tables
 --
