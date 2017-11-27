@@ -19,13 +19,13 @@ class Usuario(models.Model):
 		(u'3', u'Coordenador'),
 	)
 
-	CURSOS_CHOICES(
+	CURSOS_CHOICES = (
 		(u'ads', u'Analise e Desenvolvimento de Sistemas'),
-		(u'si', u'Sistemas de Informação'),
+		(u'si', u'Sistemas de Informacao'),
 		(u'gti', u'Gestao de Sistemas de Informacao'),
 		(u'bd', u'Banco de Dados'),
-		(u'tc', u'Telecomunicacoes e Redes de Internet')
-	)
+		(u'tc', u'Telecomunicacoes e Redes de Internet'),
+		)
 
 	usuario_id = models.AutoField(primary_key=True)
 	usuario_ra = models.CharField(max_length=50, verbose_name='RA')
@@ -48,23 +48,23 @@ class Notas(models.Model):
 	
 class Disciplinas(models.Model):
 
-	CURSOS_CHOICES(
+	CURSOS_CHOICES = (
 		(u'ads', u'Analise e Desenvolvimento de Sistemas'),
-		(u'si', u'Sistemas de Informação'),
+		(u'si', u'Sistemas de Informacao'),
 		(u'gti', u'Gestao de Sistemas de Informacao'),
 		(u'bd', u'Banco de Dados'),
 		(u'tc', u'Telecomunicacoes e Redes de Internet'),
-	)
+		)
 
-	DISCIPLINA_CHOICES(
+	DISCIPLINA_CHOICES = (
 		(u'sql', u'Linguagem SQL'),
 		(u'tec', u'Tecnologia Web'),
 		(u'es', u'Engenharia de Software'),
 		(u'lpii', u'Linguagem de programacao II'),
 		(u'gtp', u'Gestao de Projetos'),
-	)
+		)
 
 	disciplina_id = models.AutoField(primary_key=True)
-	disciplina_nome = models.CharField(verbose_name='Disciplina', choices=DISCIPLINA_CHOICES)
-	disciplina_curso = models.CharField(verbose_name='Curso', choices=CURSO_CHOICES)
+	disciplina_nome = models.CharField(verbose_name='Disciplina', choices=DISCIPLINA_CHOICES, max_length=50)
+	disciplina_curso = models.CharField(verbose_name='Curso', choices=CURSOS_CHOICES, max_length=50)
 
