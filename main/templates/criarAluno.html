@@ -81,6 +81,16 @@
             </div>
 
             <div class="control-group">
+                    <label id="label-email" class="control-label" for="email">
+                      Data de nascimento:
+                    </label>
+                    <div class="controls">
+                      {{ form.usuario_nascimento }}
+                      
+                    </div>
+                  </div>
+
+            <div class="control-group">
               <label id="label-telefone" class="control-label" for="telefone">
                 Sexo:
               </label>
@@ -103,9 +113,10 @@
                 Curso:
               </label>
               <div class="controls">
-                {{ usuario_curso }}
+                {{ form.usuario_curso }}
               </div>
             </div>
+
             <div class="control-group">
                     <label id="label-comp" class="control-label" for="comp">
                       Senha:

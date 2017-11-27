@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, render_to_response
 from django.http import HttpResponse
 from django.template import RequestContext
 from models import Usuario
-from forms import LoginForm, formDadosA, formDadosP
+from forms import LoginForm, formDadosA, formDadosP, formCriarAluno
+import datetime
 
 
 # Create your views here.
@@ -75,8 +76,8 @@ def criarAluno(request):
 
         if request.method == 'POST':
                 if formC.is_valid():
-                        formP.save()
-                        return render(request, 'criarAluno.html', {'form': form, 'ra': ra_aluno})
+                        formC.save()
+                        return render(request, 'criarAluno.html', {'form': formC, 'ra': ra_aluno})
 	
         return render(request, "criarAluno.html", {'form': formC})
 

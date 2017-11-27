@@ -54,11 +54,12 @@ class formCriarAluno(forms.ModelForm):
 	usuario_ra = forms.CharField(label="RA", widget= forms.TextInput(attrs={'class': 'input-xlarge', 'placeholder': 'RA'}))
 	usuario_nome = forms.CharField(label="Nome", widget= forms.TextInput(attrs={'class': 'input-xlarge', 'placeholder': 'Nome'}))
 	usuario_email = forms.CharField(label="E-mail", widget= forms.TextInput(attrs={'class': 'input-xlarge', 'placeholder': 'E-mail'}))
+	usuario_nascimento = forms.DateField(label="E-mail", widget= forms.DateInput(attrs={'class': 'input-xlarge', 'placeholder': 'Data de Nascimento'}))
 	usuario_sexo = forms.ChoiceField(label="Sexo", widget= forms.Select(attrs={'class': 'input-xlarge', 'placeholder': 'sEXO'}), choices = SEXO_CHOICES)
-	usuario_nivel = forms.ChoiceField(label="Nivel", widget= forms.Select(attrs={'class': 'input-xlarge', 'placeholder': 'nIVEL'}), choices = NIVEIS_CHOICES)
-	usuario_curso = forms.ChoiceField(label="Curso", widget= forms.Select(attrs={'class': 'input-xlarge', 'placeholder': 'nIVEL'}), choices = CURSOS_CHOICES)
+	usuario_nivel = forms.ChoiceField(label="Nivel", widget= forms.Select(attrs={'class': 'input-xlarge', 'placeholder': 'Nivel'}), choices = NIVEIS_CHOICES)
+	usuario_curso = forms.ChoiceField(label="Curso", widget= forms.Select(attrs={'class': 'input-xlarge', 'placeholder': 'Curso'}), choices = CURSOS_CHOICES)
 	usuario_password = forms.CharField(label="Senha", widget= forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Senha', 'required': 'required'}))
 
 	class Meta:
 		model = Usuario
-		fields = ['usuario_ra', 'usuario_nome', 'usuario_email', 'usuario_sexo', 'usuario_nivel', 'usuario_curso', 'usuario_password']
+		fields = ['usuario_ra', 'usuario_nome', 'usuario_email', 'usuario_nascimento', 'usuario_sexo', 'usuario_nivel', 'usuario_curso', 'usuario_password']
