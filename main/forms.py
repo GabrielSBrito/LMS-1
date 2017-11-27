@@ -63,9 +63,9 @@ class formCriarAluno(forms.ModelForm):
 	usuario_sexo = forms.ChoiceField(label="Sexo", widget= forms.Select(attrs={'class': 'input-xlarge', 'placeholder': 'sEXO'}), choices = SEXO_CHOICES)
 	usuario_estado_civil = forms.ChoiceField(label="Estado Civil", widget= forms.Select(attrs={'class': 'input-xlarge', 'placeholder': 'Estado Civil'}), choices = ESTADO_CIVIL_CHOICES)
 	usuario_nivel = forms.ChoiceField(label="Nivel", widget= forms.Select(attrs={'class': 'input-xlarge', 'placeholder': 'Nivel'}), choices = NIVEIS_CHOICES)
-	usuario_curso = forms.ChoiceField(label="Curso", widget= forms.Select(attrs={'class': 'input-xlarge', 'placeholder': 'Curso'}), choices = CURSOS_CHOICES)
+	usuario_cursos = forms.ChoiceField(label="Curso", widget= forms.Select(attrs={'class': 'input-xlarge', 'placeholder': 'Curso'}), choices = CURSOS_CHOICES)
 	usuario_password = forms.CharField(label="Senha", widget= forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Senha', 'required': 'required'}))
 
 	class Meta:
 		model = Usuario
-		fields = ['usuario_ra', 'usuario_nome', 'usuario_email', 'usuario_nascimento', 'usuario_sexo', 'usuario_estado_civil', 'usuario_nivel', 'usuario_curso', 'usuario_password']
+		fields = ['usuario_ra', 'usuario_nome', 'usuario_email', 'usuario_nascimento', 'usuario_sexo', 'usuario_estado_civil', 'usuario_nivel', 'usuario_cursos', 'usuario_password']
