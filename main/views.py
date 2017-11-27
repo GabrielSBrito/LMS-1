@@ -19,7 +19,7 @@ def index(request):
                         return render(request, "PortalAluno.html", {'username': username, 'ra': ra})
                 else:
                         return render(request, "PortalProfessor.html", {'username': username, 'ra': ra})
-                
+
                 return render(request, "PortalAluno.html", {'username': username, 'ra': user_ra})
 	
         return render(request, "loginAluno.html", {'form': form})
@@ -118,10 +118,7 @@ def login(request):
                                 request.session['user_level'] = user_level
                                 request.session['user_email'] = user_email
                                 
-                                if request.session['user_level'] == '1':
-                                    return render(request, "PortalAluno.html", {'username': username, 'ra': ra})
-                                else:
-                                    return render(request, "PortalProfessor.html", {'username': username, 'ra': ra})
+                                return redirect(index)
                                 
                 return render(request, "loginAluno.html", {'form': formLogin, 'trigger': 'Usuario nao encontrado'})
 
