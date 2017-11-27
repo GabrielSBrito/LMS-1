@@ -85,8 +85,22 @@ def criarAluno(request):
 def visualizarAlunos(request):
         lista = Usuario.objects.all()
       
-
         return render(request,"visualizar-alunos.html", {'lista': lista})
+
+def editarAluno(request, ra_aluno):
+        aluno = Usuario.objects.get(usuario_ra = ra_aluno)
+
+        if(not request.session['user_ra']):
+                return redirect(index)
+
+        form = formCriarAluno(request.POST or None, instance= aluno)
+
+        if request.method == 'POST':
+                if form.is_valid():
+                        form.save()
+                        return render(request, 'dadosA.html', {'form': form, 'ra': ra_aluno})
+	
+        return render(request, 'dadosA.html', {'form': form})
 
 
 def calendarioGeral(request):

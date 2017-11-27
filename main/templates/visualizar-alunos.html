@@ -84,7 +84,7 @@
         <span style="margin-left: 30px;">Curso: Gestão de Sistemas de Informação </span>
         {% endif %}
 
-        {% if lista.usuario_cursos == 'bd' %}
+        {% if usuario.usuario_cursos == 'bd' %}
         <span style="margin-left: 30px;">Curso: Banco de Dados </span>
         {% endif %}
 
@@ -92,7 +92,7 @@
         <span style="margin-left: 30px;">Curso: Telecomunicações e Redes de Internet </span>
         {% endif %}        
 
-        <span style="margin-left: 30px;"><a href="#">Editar</a></span>
+        <span style="margin-left: 30px;"><a href="http://royaltechschool.azurewebsites.net/portal/professor/editar-aluno/{{usuario.usuario_ra}}">Editar</a></span>
     </p>
     {% endfor %}
         </div>

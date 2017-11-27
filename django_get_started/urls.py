@@ -22,6 +22,7 @@ urlpatterns = patterns('',
     url(r'^portal/professor/$', 'main.views.portalProfessor', name='portalProfessor'),
     url(r'^portal/professor/criarAluno/$', 'main.views.criarAluno', name='criarAluno'),
     url(r'^portal/professor/visualizar-alunos/$', 'main.views.visualizarAlunos', name='visualizarAlunos'),
+    url(r'^portal/professor/editar-aluno/$', 'main.views.editarAluno', name='editarAluno'),
     
     url(r'^portal/professor/notas/$', 'main.views.lancarNotas', name='lancarNotas'),
     url(r'^portal/professor/dados/(?P<ra_aluno>\d+)/$', 'main.views.dadosProfessor', name='dadosProfessor'),
