@@ -77,7 +77,7 @@ def criarAluno(request):
         if request.method == 'POST':
                 if formC.is_valid():
                         formC.save()
-                        return render(request, 'criarAluno.html', {'form': formC, 'ra': ra_aluno})
+                        return render(request, 'criarAluno.html', {'form': formC, 'ra': user_ra})
 	
         return render(request, "criarAluno.html", {'form': formC})
 
