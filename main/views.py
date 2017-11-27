@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, render_to_response
 from django.http import HttpResponse
 from django.template import RequestContext
 from models import Usuario
-from forms import LoginForm, formDadosA
+from forms import LoginForm, formDadosA, formDadosP
 
 
 # Create your views here.
@@ -56,15 +56,29 @@ def dadosProfessor(request, ra_aluno):
         if(not request.session['user_ra']):
                 return redirect(index)
 
-        form = formDadosP(request.POST or None, instance= professor)
+        formP = formDadosP(request.POST or None, instance= professor)
 
         if request.method == 'POST':
-                if form.is_valid():
-                        form.save()
+                if formP.is_valid():
+                        formP.save()
                         return render(request, 'dadosP.html', {'form': form, 'ra': ra_aluno})
 	
 
-        return render(request, "dadosP.html", {'form': form})
+        return render(request, "dadosP.html", {'form': formP})
+
+def criarAluno(request):
+        
+        if(not request.session['user_ra']):
+                return redirect(index)
+
+        formC = formCriarAluno(request.POST or None)
+
+        if request.method == 'POST':
+                if formC.is_valid():
+                        formP.save()
+                        return render(request, 'criarAluno.html', {'form': form, 'ra': ra_aluno})
+	
+        return render(request, "criarAluno.html", {'form': formC})
 
 def calendarioGeral(request):
         return render(request, "entrega-atividades.html")

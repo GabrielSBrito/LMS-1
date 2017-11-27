@@ -6,7 +6,7 @@
     <meta charset="utf-8"/>
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/EstiloMenuAlunoProf.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{5 static 'css/EstiloPortal.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/EstiloPortal.css' %}"/>
 
 
     <!--Link de Fontes-->
@@ -47,7 +47,7 @@
         <!--<input type="file">-->
 
         <br><br><br>
-        <form class="form-horizontal">
+        <form method="POST" action="" class="form-horizontal">
           {% csrf_token %}
           <fieldset>
             <legend>Dados pessoais</legend>
@@ -163,16 +163,11 @@
             </div>
 
             <div class="control-group">
-              <label id="label-senha" class="control-label" for="comp">
-                Senha:
-              </label>
-              <div class="controls">
-                {{ form.usuario_passowrd }}		
-              </div>
+              
             </div>
 
             <div class="confirm-alteracao">
-              <a href="PortalProfessor.html" class="botao-salvar" id="salvar-alteracoes" href="javascript:void(0)">Salvar</a>
+                <button type="submit" class="botao-salvar">Salvar</button>
             </div>
           </fieldset>
         </form>

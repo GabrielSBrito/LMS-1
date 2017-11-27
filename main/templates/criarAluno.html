@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load staticfiles %}
+    <title>Portal - Professor </title>
+    <meta charset="utf-8"/>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/EstiloMenuAlunoProf.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/EstiloPortal.css' %}"/>
+
+
+    <!--Link de Fontes-->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+  </head>
+  <body background="{% static 'img/fundoportal.png' %}">
+
+    <div id="lateral">
+        <div id="menu">
+          <h3 class="link-titulo">Secretaria</h3>
+          <ul class="box">	
+              <li><a href="http://royaltechschool.azurewebsites.net/">Home</a></li>				
+            <li><a href="http://royaltechschool.azurewebsites.net/portal/boletim">Boletim</a></li>
+            <li><a href="http://royaltechschool.azurewebsites.net/portal/calendario-geral">Calendário de Aulas</a></li>
+            <li ><a href="#">Horário das Aulas</a></li>
+            <li ><a href="http://royaltechschool.azurewebsites.net/portal/dados/aluno">Alterar Dados</a></li>
+  
+          </ul>
+          <h3 class="link-titulo">Financeiro</h3>
+          <ul class="box">
+            <li><a href="#">Pagamentos</a></li>
+          </ul>
+          <h3 class="link-titulo">Acesso as Aulas</h3>
+          <ul class="box">					
+            <li><a href="http://royaltechschool.azurewebsites.net/portal/professor/subir-aula/">Subir Aula</a></li> 			
+            <li><a href="#">Entrega de Trabalhos</a></li> 		
+            <li><a href="http://royaltechschool.azurewebsites.net/portal/entrega-atividades">Entrega de Atividades</a></li> 	
+  
+          </ul>
+        </div> 
+      </div>
+    <br><br>
+    <div class="base2">
+
+      <div class="DPessoais">
+
+        <!--<input type="file">-->
+
+        <br><br><br>
+        <form method="POST" action="" class="form-horizontal">
+          {% csrf_token %}
+          <fieldset>
+            <legend>Dados pessoais</legend>
+            <div class="control-group">
+                    <label id="label-nome" class="control-label" for="nome">
+                      RA:
+                    </label>
+                    <div class="controls">
+                      {{ form.usuario_ra }}
+                    </div>
+                  </div>
+
+            <div class="control-group">
+              <label id="label-nome" class="control-label" for="nome">
+                Nome:
+              </label>
+              <div class="controls">
+                {{ form.usuario_nome   }}
+                <span class="needed">* Nome deve estar igual Receita Federal</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label id="label-email" class="control-label" for="email">
+                E-Mail:
+              </label>
+              <div class="controls">
+                {{ form.usuario_email }}
+                <span class="needed">* Deve ser um E-mai válido.</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label id="label-telefone" class="control-label" for="telefone">
+                Sexo:
+              </label>
+              <div class="controls">
+                {{ form.usuario_sexo }}
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label id="label-celular" class="control-label" for="celular">
+                Nivel:
+              </label>
+              <div class="controls">
+                {{ form.usuario_nivel }}
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label id="label-comercial" class="control-label" for="comercial">
+                Curso:
+              </label>
+              <div class="controls">
+                {{ usuario_curso }}
+              </div>
+            </div>
+            <div class="control-group">
+                    <label id="label-comp" class="control-label" for="comp">
+                      Senha:
+                    </label>
+                    <div class="controls">
+                      {{ form.usuario_password }}
+                    </div>
+                  </div>
+          </fieldset>
+          <fieldset>
+
+            <div class="control-group">
+              
+            </div>
+
+            <div class="confirm-alteracao">
+                <button type="submit" class="botao-salvar">Salvar</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+
+    <div id="footer" class="footer" data-bind="css: { 'default': !backgroundLogoUrl() }"> 
+      <div>
+        <span id="ftrCopy" data-bind="html: svr.B2"><center>©2017 Royal Tech</center></span>
+      </div> 
+    </div> 
+  </body>
+</html>
