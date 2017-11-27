@@ -6,6 +6,8 @@ class LoginForm(forms.ModelForm):
 	
 	usuario_ra = forms.CharField(label="RA", widget= forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Insira seu RA'}))
 	usuario_password = forms.CharField(label="Senha", widget= forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Senha', 'required': 'required'}))
+	usuario_aluno = forms.CharField(label="Nivel", widget = forms.NumberInput(attrs={'type': 'hidden', 'value': '1'}))
+	usuario_professor = forms.CharField(label="Nivel", widget = forms.NumberInput(attrs={'type': 'hidden', 'value': '2'}))
 	
 	class Meta:
 		model = Usuario

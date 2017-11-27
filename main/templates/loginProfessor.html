@@ -19,19 +19,21 @@
       <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
       <img id="profile-img" class="profile-img-card" src="{% static 'img/professor1.png' %}"/>
       <p id="profile-name" class="profile-name-card"></p>
-      <form action="portal/professor" class="form-signin">
+      <form action="login" class="form-signin">
+        {% csrf_token %}
         <span id="reauth-ra" class="reauth-ra"></span>
-        <input type="number" id="inputRa" class="form-control" placeholder="RA" required autofocus>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-        <div id="remember" class="checkbox">
-          </div>
+        {{form.usuario_ra}}
+        {{form.usuario_password}}
+        {{form.usuario_professor}}
         <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
       </form><!-- /form -->
       <a href="#" class="forgot-password">
         Esqueceu a senha?
       </a>
       <br>
+      {% if trigger %}
       <span style="color: red; margin: 0 auto;">{{ trigger }}</span>
+      {% endif %}
     </div><!-- /card-container -->
   </div><!-- /container -->
 

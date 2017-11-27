@@ -74,7 +74,7 @@ def bad_request(request):
 
 def criarAluno(request):
 
-        if request.session['user_level'] == 2 or request.session['user_level'] == 3:
+        if request.session['user_level'] == '2' or request.session['user_level'] == '3':
                 if request.method == 'POST':
                         formLogin = LoginForm(request.POST)
 
@@ -105,6 +105,9 @@ def criarAluno(request):
 
         return redirect(portalProfessor)
 
+def loginProfessor(request):
+
+        return render(request, "loginProfessor.html")
 
 def login(request):
         
@@ -134,9 +137,15 @@ def login(request):
                                 request.session['user_level'] = user_level
                                 request.session['user_email'] = user_email
 
-                                return render(request, "PortalAluno.html", {'username': username, 'ra': ra})
-                                
-                return render(request, "loginAluno.html", {'form': formLogin, 'trigger': 'Usuario nao encontrado'})
+                                if request.session['user_level'] == '1':
+                                        return render(request, "PortalAluno.html", {'username': username, 'ra': ra})
+                                else:
+                                        return render(request, "PortalProfessor.html", {'username': username, 'ra': ra})
+                
+                if formLogin.cleaned_data['usuario_aluno']:         
+                        return render(request, "loginAluno.html", {'form': formLogin, 'trigger': 'Usuario nao encontrado'})
+                else:
+                        return render(request, "loginProfessor.html", {'form': formLogin, 'trigger': 'Usuario nao encontrado'})
 
 def logout(request):
         try:

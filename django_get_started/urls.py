@@ -25,6 +25,7 @@ urlpatterns = patterns('',
     url(r'^portal/professor/dados/$', 'main.views.dadosProfessor', name='dadosProfessor'),
     url(r'^portal/professor/subir-aula/$', 'main.views.subirAula', name='subirAula'),
     url(r'^login$', 'main.views.login', name='login'),
+    url(r'^login-professor$', 'main.views.loginProfessor', name='loginProfessor'),
     url(r'^logout/$', 'main.views.logout', name='logout'),
 
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
