@@ -43,8 +43,21 @@ def dadosAluno(request, ra_aluno):
 	
         return render(request, 'dadosA.html', {'form': form})
 
-def dadosProfessor(request):
-        return render(request, "dadosP.html")
+def dadosProfessor(request, ra_aluno):
+        professor = Usuario.objects.get(usuario_ra = ra_aluno)
+
+        if(not request.session['user_ra']):
+                return redirect(index)
+
+        form = formDadosP(request.POST or None, instance= professor)
+
+        if request.method == 'POST':
+                if form.is_valid():
+                        form.save()
+                        return render(request, 'dadosP.html', {'form': form, 'ra': ra_aluno})
+	
+
+        return render(request, "dadosP.html", {'form': form})
 
 def calendarioGeral(request):
         return render(request, "entrega-atividades.html")
@@ -57,9 +70,6 @@ def portalProfessor(request):
 
 def lancarNotas(request):
         return render(request, "lancarNotas.html")
-
-def dadosProfessor(request):
-        return render(request, "dadosP.html")
 
 def subirAula(request):
         return render(request, "SubirAula.html")
