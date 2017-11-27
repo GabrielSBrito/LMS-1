@@ -68,7 +68,8 @@ def dadosProfessor(request, ra_aluno):
         return render(request, "dadosP.html", {'form': formP})
 
 def criarAluno(request):
-        
+        user_ra = request.session['user_ra']
+
         if(not request.session['user_ra']):
                 return redirect(index)
 
@@ -80,6 +81,12 @@ def criarAluno(request):
                         return render(request, 'criarAluno.html', {'form': formC, 'ra': user_ra})
 	
         return render(request, "criarAluno.html", {'form': formC})
+
+def visualizarAlunos(request):
+        lista = Usuario.objects.all()
+
+        return render(request,"visualizar-alunos.html", {'lista': lista})
+
 
 def calendarioGeral(request):
         return render(request, "entrega-atividades.html")

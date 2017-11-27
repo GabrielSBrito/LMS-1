@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br"><head>
+        
+        <title>Portal - Aluno </title>
+        <meta charset="utf-8">
+    
+        <link rel="stylesheet" type="text/css" href="/static/css/EstiloPortal.css">
+    
+        <!--Link de Fontes-->
+        <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    
+      <style>
+            .list{
+                font-size: 14px;
+                margin-left: 0;
+            }
+        
+        .alunos p:nth-child(even){
+            background: #e5e5e5;
+        }
+        
+        .alunos p{
+            background: #848484;
+            padding: 20px;
+        }
+        
+        .alunos a{
+            text-decoration: none;
+            background: #018717;
+            padding: 10px;
+            border-radius: 5px;
+            color: #fff;
+        }
+        
+        .alunos a:hover{
+            background: #00bc1e;
+        }
+        </style></head>
+        
+      <body>
+          <div id="lateral">
+              <div id="menu">
+                <h3 class="link-titulo">Secretaria</h3>
+                <ul class="box">	
+                    <li><a href="http://royaltechschool.azurewebsites.net/">Home</a></li>					
+                  <li><a href="http://royaltechschool.azurewebsites.net/portal/boletim">Boletim</a></li>
+                  <li><a href="http://royaltechschool.azurewebsites.net/portal/calendario-geral">Calendário de Aulas</a></li>
+                  <li><a href="#">Horário das Aulas</a></li>
+                  <li><a href="http://royaltechschool.azurewebsites.net/portal/dados/aluno">Alterar Dados</a></li>
+        
+                </ul>
+                <h3 class="link-titulo">Financeiro</h3>
+                <ul class="box">
+                  <li><a href="#">Pagamentos</a></li>
+                </ul>
+                <h3 class="link-titulo">Acesso as Aulas</h3>
+                <ul class="box">					
+                  <li><a href="http://royaltechschool.azurewebsites.net/portal/aulas-gravadas">Aulas Gravadas</a></li> 			
+                  <li><a href="#">Entrega de Trabalhos</a></li> 		
+                  <li><a href="http://royaltechschool.azurewebsites.net/portal/entrega-atividades">Entrega de Atividades</a></li> 	
+        
+                </ul>
+              </div> 
+            </div>
+        <p>Usuários</p><hr class="hr-trabalho">
+        <br>
+          <div class="alunos" style="display: flex; width: 100%; margin-left: 10%; margin-top: 5%;">
+    
+     <div class="container">
+    {% for usuario in lista %}
+    <p class="list">RA: {{ usuario.usuario_ra }} <span style="margin-left: 30px;">Nome: {{ usuario.usuario_nome }}</span><span style="margin-left: 30px;">Curso: usuario.usuario_curso</span> 
+        <span style="margin-left: 30px;"><a href="#">Editar</a></span>
+    </p>
+    {% endfor %}
+        </div>
+    </div>
+        
+        <div id="footer" class="footer" data-bind="css: { 'default': !backgroundLogoUrl() }"> 
+          <div>
+            <span id="ftrCopy" data-bind="html: svr.B2"><center>©2017 Royal Tech</center></span>
+          </div> 
+        </div> 
+      
+    </body></html>
