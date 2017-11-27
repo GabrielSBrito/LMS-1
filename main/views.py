@@ -15,7 +15,7 @@ def index(request):
                 user_ra = request.session['user_ra']
                 userid = request.session['user_id']
                 
-                 if request.session['user_level'] == '1':
+                if request.session['user_level'] == '1':
                         return render(request, "PortalAluno.html", {'username': username, 'ra': ra})
                 else:
                         return render(request, "PortalProfessor.html", {'username': username, 'ra': ra})
