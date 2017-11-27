@@ -70,7 +70,28 @@
     
      <div class="container">
     {% for usuario in lista %}
-    <p class="list">RA: {{ usuario.usuario_ra }} <span style="margin-left: 30px;">Nome: {{ usuario.usuario_nome }}</span><span style="margin-left: 30px;">Curso: usuario.usuario_curso</span> 
+    <p class="list">RA: {{ usuario.usuario_ra }} <span style="margin-left: 30px;">Nome: {{ usuario.usuario_nome }}</span>
+        
+        {% if  usuario.usuario_cursos == 'ads' %}
+        <span style="margin-left: 30px;">Curso: Análise e Desenvolvimento de Sistemas</span>
+        {% endif %}
+
+        {% if usuario.usuario_cursos == 'si' %}
+        <span style="margin-left: 30px;">Curso: Sistemas de Informação </span>
+        {% endif %}
+
+        {% if usuario.usuario_cursos == 'gti' %}
+        <span style="margin-left: 30px;">Curso: Gestão de Sistemas de Informação </span>
+        {% endif %}
+
+        {% if lista.usuario_cursos == 'bd' %}
+        <span style="margin-left: 30px;">Curso: Banco de Dados </span>
+        {% endif %}
+
+        {% if usuario.usuario_cursos == 'tc' %}
+        <span style="margin-left: 30px;">Curso: Telecomunicações e Redes de Internet </span>
+        {% endif %}        
+
         <span style="margin-left: 30px;"><a href="#">Editar</a></span>
     </p>
     {% endfor %}

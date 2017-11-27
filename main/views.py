@@ -84,6 +84,7 @@ def criarAluno(request):
 
 def visualizarAlunos(request):
         lista = Usuario.objects.all()
+      
 
         return render(request,"visualizar-alunos.html", {'lista': lista})
 
