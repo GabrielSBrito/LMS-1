@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html lang='pt-br'>
-  <head>
-    {% load staticfiles %}
-    <title>Portal - Aluno </title>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/EstiloGeral-Index.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/EstiloRodapeIndex.css' %}"/>
+<head>
+  {% load staticfiles %}
+  <title>Portal - Aluno </title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/EstiloGeral-Index.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/EstiloRodapeIndex.css' %}"/>
 
-    <!--Link de Fontes-->
-    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <!--Link de Fontes-->
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
-  </head>
-  <body background="{% static 'img/fundo.jpeg' %}">
-    <br><br><br><br><br><br><br>
-    <div class="container">
-      <div class="card card-container"><center><span class="font-container-aluno">Login Aluno</span></center>
-        <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-        <img id="profile-img" class="profile-img-card" src="{% static 'img/chapeu.jpg' %}"/>
-        <p id="profile-name" class="profile-name-card"></p>
-        <form action="login" method="POST" class="form-signin">
-          {% csrf_token %}
-          <span id="reauth-ra" class="reauth-ra"></span>
-         <!-- <input type="number" id="inputRa" class="form-control" placeholder="RA" required autofocus> -->
-          {{form.usuario_ra}}
-          <!-- <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required> -->
-          {{form.usuario_password}}
-          <div id="remember" class="checkbox">
-            <label>
-              <input class="me-lembre" type="checkbox" value="remember-me"> Me lembre</input>
-            </label>
+</head>
+<body background="{% static 'img/fundo.jpeg' %}">
+  <br><br><br><br><br><br><br>
+  <div class="container">
+    <div class="card card-container"><center><span class="font-container-aluno">Login Aluno</span></center>
+      <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+      <img id="profile-img" class="profile-img-card" src="{% static 'img/chapeu.jpg' %}"/>
+      <p id="profile-name" class="profile-name-card"></p>
+      <form action="login" method="POST" class="form-signin">
+        {% csrf_token %}
+        <span id="reauth-ra" class="reauth-ra"></span>
+        <!-- <input type="number" id="inputRa" class="form-control" placeholder="RA" required autofocus> -->
+        {{form.usuario_ra}}
+        <!-- <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required> -->
+        {{form.usuario_password}}
+        <div id="remember" class="checkbox">
           </div>
-          <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
-        </form><!-- /form -->
-        <a href="#" class="forgot-password">
-          Esqueceu a senha?
-        </a>
-        {% if trigger %}
-        <span style="color: red; margin: 0 auto;">{{ trigger }}</span>
-        {% endif %}
-      </div><!-- /card-container -->
-    </div><!-- /container -->
-    <div id="footer" class="footer default" data-bind="css: { 'default': !backgroundLogoUrl() }"> 
-      <div>
-        <span id="ftrCopy" data-bind="html: svr.B2"><center>©2017 Royal Tech</center></span>
-        <!--<a id="ftrTerms" <!--href=""  Termos de uso</a> 
-        <a id="ftrPrivacy" <!-- href=""   Privacidade e cookies</a>-->
-      </div> 
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
+      </form><!-- /form -->
+      <a href="#" class="forgot-password">
+        Esqueceu a senha?
+      </a>
+      <br>
+      {% if trigger %}
+      <span style="color: red; margin: 0 auto;">{{ trigger }}</span>
+      {% endif %}
+    </div><!-- /card-container -->
+  </div><!-- /container -->
+  <div id="footer" class="footer default" data-bind="css: { 'default': !backgroundLogoUrl() }"> 
+    <div>
+      <span id="ftrCopy" data-bind="html: svr.B2"><center>©2017 Royal Tech</center></span>
+      <!--<a id="ftrTerms" <!--href=""  Termos de uso</a> 
+      <a id="ftrPrivacy" <!-- href=""   Privacidade e cookies</a>-->
     </div> 
+  </div> 
 
-  </body>
+</body>
 </html>

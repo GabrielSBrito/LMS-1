@@ -72,6 +72,40 @@ def bad_request(request):
         response.status_code = 400
         return response
 
+def criarAluno(request):
+
+        if request.session['user_level'] == 2 or request.session['user_level'] == 3:
+                if request.method == 'POST':
+                        formLogin = LoginForm(request.POST)
+
+                        if formLogin.is_valid():
+                                ra_user = formLogin.cleaned_data['usuario_ra']
+                                pass_user = formLogin.cleaned_data['usuario_password']
+                                
+                                try:
+                                login = Usuario.objects.get(usuario_ra = ra_user, usuario_password  = pass_user)
+                                except Usuario.DoesNotExist:
+                                login = '0'
+                                
+                                
+                                if login is not '0':
+                                        username = login.usuario_nome
+                                        ra = login.usuario_ra
+                                        userid = login.usuario_id
+                                        user_level = login.usuario_nivel
+                                        user_email = login.usuario_email
+
+                                        request.session['username'] = username
+                                        request.session['user_id'] = userid
+                                        request.session['user_ra'] = ra
+                                        request.session['user_level'] = user_level
+                                        request.session['user_email'] = user_email
+
+                                        return render(request, "PortalAluno.html", {'username': username, 'ra': ra})
+
+        return redirect(portalProfessor)
+
+
 def login(request):
         
         if request.method == 'POST':
@@ -109,6 +143,8 @@ def logout(request):
                 del request.session['username']
                 del request.session['user_id']
                 del request.session['user_ra']
+                del request.session['user_level']
+                del request.session['user_email']
         except:
                 pass
         

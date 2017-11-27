@@ -5,7 +5,7 @@ from main.models import Usuario
 class UsuarioAdmin(admin.ModelAdmin):
 
 	model= Usuario
-	list_display = ['usuario_ra', 'usuario_nome', 'usuario_email', 'usuario_sexo', 'usuario_password']
+	list_display = ['usuario_ra', 'usuario_nome', 'usuario_email', 'usuario_sexo', 'usuario_password', 'usuario_curso']
 	search_fields = ['usuario_ra']
 	save_on_top = True
 
