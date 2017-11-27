@@ -124,7 +124,7 @@
                 {{ form.usuario_cursos }}
               </div>
             </div>
-
+            {% if requirepwd %}
             <div class="control-group">
                     <label id="label-comp" class="control-label" for="comp">
                       Senha:
@@ -133,6 +133,7 @@
                       {{ form.usuario_password }}
                     </div>
                   </div>
+            {% endif %}
           </fieldset>
           <fieldset>
 

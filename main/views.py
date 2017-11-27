@@ -69,7 +69,7 @@ def dadosProfessor(request, ra_aluno):
 
 def criarAluno(request):
         user_ra = request.session['user_ra']
-
+        requirepwd = 1
         if(not request.session['user_ra']):
                 return redirect(index)
 
@@ -78,9 +78,9 @@ def criarAluno(request):
         if request.method == 'POST':
                 if formC.is_valid():
                         formC.save()
-                        return render(request, 'criarAluno.html', {'form': formC, 'ra': user_ra})
+                        return render(request, 'criarAluno.html', {'form': formC, 'ra': user_ra, 'requirepwd': requirepwd})
 	
-        return render(request, "criarAluno.html", {'form': formC})
+        return render(request, "criarAluno.html", {'form': formC, 'requirepwd': requirepwd})
 
 def visualizarAlunos(request):
         lista = Usuario.objects.all()
@@ -89,18 +89,19 @@ def visualizarAlunos(request):
 
 def editarAluno(request, ra_aluno):
         aluno = Usuario.objects.get(usuario_ra = ra_aluno)
+        requirepwd = 0
 
         if(not request.session['user_ra']):
                 return redirect(index)
 
-        form = formCriarAluno(request.POST or None, instance= aluno)
+        form = formEditarAluno(request.POST or None, instance= aluno)
 
         if request.method == 'POST':
                 if form.is_valid():
                         form.save()
-                        return render(request, 'dadosA.html', {'form': form, 'ra': ra_aluno})
+                        return render(request, 'criarAluno.html', {'form': form, 'ra': ra_aluno, 'requirepwd': requirepwd})
 	
-        return render(request, 'dadosA.html', {'form': form})
+        return render(request, 'criarAluno.html', {'form': form, 'requirepwd': requirepwd})
 
 
 def calendarioGeral(request):
