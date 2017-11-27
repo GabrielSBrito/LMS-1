@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, render_to_response
 from django.http import HttpResponse
 from django.template import RequestContext
 from models import Usuario
-from forms import LoginForm, formDadosA, formDadosP, formCriarAluno
+from forms import LoginForm, formDadosA, formDadosP, formCriarAluno, formEditarAluno
 import datetime
 
 
@@ -52,6 +52,10 @@ def dadosAluno(request, ra_aluno):
         return render(request, 'dadosA.html', {'form': form})
 
 def dadosProfessor(request, ra_aluno):
+
+        if(request.session['user_level'] == '1'):
+                return redirect(index)
+
         professor = Usuario.objects.get(usuario_ra = ra_aluno)
 
         if(not request.session['user_ra']):
@@ -68,6 +72,10 @@ def dadosProfessor(request, ra_aluno):
         return render(request, "dadosP.html", {'form': formP})
 
 def criarAluno(request):
+
+        if(request.session['user_level'] == '1'):
+                return redirect(index)
+
         user_ra = request.session['user_ra']
         requirepwd = 1
         if(not request.session['user_ra']):
@@ -83,11 +91,19 @@ def criarAluno(request):
         return render(request, "criarAluno.html", {'form': formC, 'requirepwd': requirepwd})
 
 def visualizarAlunos(request):
+
+        if(request.session['user_level'] == '1'):
+                return redirect(index)
+
         lista = Usuario.objects.all()
       
         return render(request,"visualizar-alunos.html", {'lista': lista})
 
 def editarAluno(request, ra_aluno):
+        
+        if(request.session['user_level'] == '1'):
+                return redirect(index)
+
         aluno = Usuario.objects.get(usuario_ra = ra_aluno)
         requirepwd = 0
 

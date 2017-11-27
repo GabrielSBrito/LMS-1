@@ -70,7 +70,7 @@ class formCriarAluno(forms.ModelForm):
 		model = Usuario
 		fields = ['usuario_ra', 'usuario_nome', 'usuario_email', 'usuario_nascimento', 'usuario_sexo', 'usuario_estado_civil', 'usuario_nivel', 'usuario_cursos', 'usuario_password']
 	
-	class formEditarAluno(forms.ModelForm):
+class formEditarAluno(forms.ModelForm):
 
 	SEXO_CHOICES = (
 		(u'masculino', u'Masculino'),
@@ -105,7 +105,6 @@ class formCriarAluno(forms.ModelForm):
 	usuario_nivel = forms.ChoiceField(label="Nivel", widget= forms.Select(attrs={'class': 'input-xlarge', 'placeholder': 'Nivel'}), choices = NIVEIS_CHOICES)
 	usuario_cursos = forms.ChoiceField(label="Curso", widget= forms.Select(attrs={'class': 'input-xlarge', 'placeholder': 'Curso'}), choices = CURSOS_CHOICES)
 	
-
 	class Meta:
 		model = Usuario
 		fields = ['usuario_ra', 'usuario_nome', 'usuario_email', 'usuario_nascimento', 'usuario_sexo', 'usuario_estado_civil', 'usuario_nivel', 'usuario_cursos']
