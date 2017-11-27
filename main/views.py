@@ -9,12 +9,20 @@ from forms import LoginForm, formDadosA
 
 def index(request):
         form = LoginForm(request.POST or None)
+        
         if request.session.has_key('username') and request.session.has_key('user_ra') and request.session.has_key('user_id'):
                 username = request.session['username']
                 user_ra = request.session['user_ra']
                 userid = request.session['user_id']
+                
+                 if request.session['user_level'] == '1':
+                        return render(request, "PortalAluno.html", {'username': username, 'ra': ra})
+                else:
+                        return render(request, "PortalProfessor.html", {'username': username, 'ra': ra})
+                
                 return render(request, "PortalAluno.html", {'username': username, 'ra': user_ra})
-	return render(request, "loginAluno.html", {'form': form})
+	
+        return render(request, "loginAluno.html", {'form': form})
 
 def portalAluno(request):
         return render(request, "PortalAluno.html")
