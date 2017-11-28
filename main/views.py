@@ -121,7 +121,7 @@ def editarAluno(request, ra_aluno):
 
 
 def calendarioGeral(request):
-        return render(request, "entrega-atividades.html")
+        return render(request, "calendario-geral.html")
 
 def entregaAtividades(request):
         return render(request, "entrega-atividades.html")

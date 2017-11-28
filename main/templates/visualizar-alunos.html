@@ -22,6 +22,7 @@
         .alunos p{
             background: #848484;
             padding: 20px;
+            width: 100%;
         }
         
         .alunos a{
@@ -39,7 +40,7 @@
         }
 
         .container{
-            max-width: 70%;
+            max-width: 100%;
 
         }
         </style></head>
@@ -77,29 +78,29 @@
     
      <div class="container">
     {% for usuario in lista %}
-    <p class="list">RA: {{ usuario.usuario_ra }} <span style="margin-left: 30px;">Nome: {{ usuario.usuario_nome }}</span>
+    <p class="list"><b>RA</b>: {{ usuario.usuario_ra }} <span style="margin-left: 30px;"><b>Nome</b>: {{ usuario.usuario_nome }}</span>
         
         {% if  usuario.usuario_cursos == 'ads' %}
-        <span style="margin-left: 30px;">Curso: Análise e Desenvolvimento de Sistemas</span>
+        <span style="margin-left: 30px;"><b>Curso</b>: Análise e Desenvolvimento de Sistemas</span>
         {% endif %}
 
         {% if usuario.usuario_cursos == 'si' %}
-        <span style="margin-left: 30px;">Curso: Sistemas de Informação </span>
+        <span style="margin-left: 30px;"><b>Curso</b>: Sistemas de Informação </span>
         {% endif %}
 
         {% if usuario.usuario_cursos == 'gti' %}
-        <span style="margin-left: 30px;">Curso: Gestão de Sistemas de Informação </span>
+        <span style="margin-left: 30px;"><b>Curso<b/>: Gestão de Sistemas de Informação </span>
         {% endif %}
 
         {% if usuario.usuario_cursos == 'bd' %}
-        <span style="margin-left: 30px;">Curso: Banco de Dados </span>
+        <span style="margin-left: 30px;"><b>Curso</b>: Banco de Dados </span>
         {% endif %}
 
         {% if usuario.usuario_cursos == 'tc' %}
-        <span style="margin-left: 30px;">Curso: Telecomunicações e Redes de Internet </span>
+        <span style="margin-left: 30px;"><b>Curso</b>: Telecomunicações e Redes de Internet </span>
         {% endif %}
         
-        <span style="margin-left: 30px;">Função: {% if usuario.usuario_nivel == '1'} Aluno {% else %} Professor {% endif %}</span>
+        <span style="margin-left: 30px;"><b>Função</b>: {% if usuario.usuario_nivel == '1' %} Aluno {% else %} Professor {% endif %}</span>
 
         <span style="margin-left: 30px;"><a href="http://royaltechschool.azurewebsites.net/portal/professor/editar-aluno/{{usuario.usuario_ra}}">Editar</a></span>
     </p>
