@@ -178,7 +178,7 @@ def login(request):
                                 elif login.usuario_cursos == 'tc':
                                         request.session['curso'] = 'Telecomunicacoes'
                                 else:
-                                        request.session['curso'] = ''
+                                        request.session['curso'] = 'Teste'
 
                                 request.session['username'] = username
                                 request.session['user_id'] = userid

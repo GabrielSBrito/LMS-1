@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
+        {% load staticfiles %}
     
     <title>Portal - Aluno </title>
     <meta charset="utf-8">
@@ -15,6 +16,12 @@
             width: 80%;
            
         }
+
+        .container{
+            margin-bottom: 30px;
+            margin-left: 15%;
+        }
+
     </style></head>
     
     
@@ -27,7 +34,7 @@
               <li><a href="http://royaltechschool.azurewebsites.net/portal/boletim">Boletim</a></li>
               <li><a href="http://royaltechschool.azurewebsites.net/portal/calendario-geral">Calendário de Aulas</a></li>
               <li><a href="#">Horário das Aulas</a></li>
-              <li><a href="http://royaltechschool.azurewebsites.net/portal/dados/aluno">Alterar Dados</a></li>
+              <li><a href="http://royaltechschool.azurewebsites.net/portal/dados/aluno/{{ra}}">Alterar Dados</a></li>
     
             </ul>
             <h3 class="link-titulo">Financeiro</h3>
