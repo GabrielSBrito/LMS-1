@@ -37,6 +37,11 @@
         .alunos a:hover{
             background: #00bc1e;
         }
+
+        .container{
+            max-width: 70%;
+
+        }
         </style></head>
         
       <body>
@@ -68,7 +73,7 @@
                   </div>
         <p>Usuários</p><hr class="hr-trabalho">
         <br>
-          <div class="alunos" style="display: flex; width: 100%; margin-left: 10%; margin-top: 5%;">
+          <div class="alunos" style="display: flex; max-width: 70%; margin-left: 10%; margin-top: 5%;">
     
      <div class="container">
     {% for usuario in lista %}
@@ -92,7 +97,9 @@
 
         {% if usuario.usuario_cursos == 'tc' %}
         <span style="margin-left: 30px;">Curso: Telecomunicações e Redes de Internet </span>
-        {% endif %}        
+        {% endif %}
+        
+        <span style="margin-left: 30px;">Função: {% if usuario.usuario_nivel == '1'} Aluno {% else %} Professor {% endif %}</span>
 
         <span style="margin-left: 30px;"><a href="http://royaltechschool.azurewebsites.net/portal/professor/editar-aluno/{{usuario.usuario_ra}}">Editar</a></span>
     </p>

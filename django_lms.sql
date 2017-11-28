@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:57152
--- Generation Time: Nov 27, 2017 at 12:25 PM
+-- Generation Time: Nov 27, 2017 at 03:37 PM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.31
 
@@ -229,10 +229,10 @@ CREATE TABLE `django_session` (
 --
 
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
-('0rltocs6cas2ny8fwgf0bb0jsm2z4kt5', 'NThmZjg5ZTNjNTM0MzAzYWM3M2ZkNjY3Mzc0Y2ExMDUwYjc3MGEzMzp7InVzZXJfbGV2ZWwiOiIxIiwidXNlcl9lbWFpbCI6Imx1Y2FzZmFsbWVpZGExOTk4QGhvdG1haWwuY29tIn0=', '2017-12-09 23:41:27.025000'),
+('0rltocs6cas2ny8fwgf0bb0jsm2z4kt5', 'ZDVlNjFiZDBkNTM5ZTI0YzdmYTc2ODlmZTYzOGVmODQwNDljNDExZTp7InVzZXJuYW1lIjoiVmFuZGVyc29uIFRha2FpIE9ub2ZyZSBUYWt1bm8iLCJ1c2VyX2lkIjo1LCJ1c2VyX2xldmVsIjoiMiIsInVzZXJfZW1haWwiOiJyZWluYWxkb1RLQGdtYWlsLmNvbSIsInVzZXJfcmEiOiIxNzAwMSJ9', '2017-12-11 22:04:24.366000'),
 ('8nnie2re4ar5aftzf5cm8b4vwjy8q3b1', 'OWIyYWJmY2MyMzVlMDczODMyNGVkYTQ5Yzk3NGU0ZTliOWY1N2Y4ZDp7InVzZXJuYW1lIjoiTGVhbmRybyBNYXRhZG9yIGRlIG9uXHUwMGU3YSIsInVzZXJfcmEiOiIxNzAwNjMxIiwidXNlcl9pZCI6NCwidXNlcl9sZXZlbCI6IjEiLCJ1c2VyX2VtYWlsIjoibGVhbmRyb0Bob3RtYWlsLmNvbSJ9', '2017-12-09 17:49:54.735000'),
 ('j8ebokm93upv44bf6depfb2rq42qzxnr', 'ZWZiNjQxYTI1ZWQ3OThiZTAxMjc4MmNhYTYwMjJlZDQ5YzlmZjNkYTp7fQ==', '2017-12-09 15:53:35.154000'),
-('s8491t59ab173xbdlykklnw6m1n7c37l', 'MjQ5MGRmZTkwOGQyODEzMTY5YTZmNzcwOTU3YTkzMWQyNWQwMmRlMjp7InVzZXJuYW1lIjoiUmVpbmFsZG8gVGFrYWkiLCJ1c2VyX2lkIjo1LCJfYXV0aF91c2VyX2lkIjoiMSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwidXN1YXJpb19pZCI6MiwidXNlcl9sZXZlbCI6IjIiLCJ1c2VyX3JhIjoiMTcwMDEiLCJfYXV0aF91c2VyX2hhc2giOiIzMTAxMDdlMmI3ZWM2NGU1N2MwMzQ2NjkzMjQ3NTIzZDFhZDc4YTkwIiwidXNlcl9lbWFpbCI6InJlaW5hbGRvVEtAZ21haWwuY29tIn0=', '2017-12-11 20:20:30.319000'),
+('s8491t59ab173xbdlykklnw6m1n7c37l', 'Yjg4OGQ3ZjgyYTc2YTFjNTM0NGI2ZDM4YzgzYTk1MTg4MzFkYmJiNjp7InVzZXJuYW1lIjoiVmFuZGVyc29uIFRha2FpIE9ub2ZyZSBUYWt1bm8iLCJ1c2VyX2lkIjo1LCJfYXV0aF91c2VyX2lkIjoiMSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwidXN1YXJpb19pZCI6MiwidXNlcl9sZXZlbCI6IjIiLCJ1c2VyX3JhIjoiMTcwMDEiLCJfYXV0aF91c2VyX2hhc2giOiIzMTAxMDdlMmI3ZWM2NGU1N2MwMzQ2NjkzMjQ3NTIzZDFhZDc4YTkwIiwidXNlcl9lbWFpbCI6InJlaW5hbGRvVEtAZ21haWwuY29tIn0=', '2017-12-11 23:31:30.060000'),
 ('tvqebf1liyois74itigv0ocvpjzwt90w', 'NmI4OWU1OTViM2MwM2Q2OTBmYTFlYjU0YjhjNGIzZDVlOWZkMzVlOTp7Il9hdXRoX3VzZXJfaGFzaCI6IjMxMDEwN2UyYjdlYzY0ZTU3YzAzNDY2OTMyNDc1MjNkMWFkNzhhOTAiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', '2017-12-08 00:39:26.090000');
 
 -- --------------------------------------------------------
@@ -315,10 +315,11 @@ CREATE TABLE `main_usuario` (
 --
 
 INSERT INTO `main_usuario` (`usuario_id`, `usuario_ra`, `usuario_nome`, `usuario_nascimento`, `usuario_sexo`, `usuario_estado_civil`, `usuario_email`, `usuario_nivel`, `usuario_password`, `usuario_cursos`, `usuario_notas`) VALUES
-(2, '1600142', 'Yan Santos Silva', '2017-11-13', 'masculino', 'solteiro', 'yyangtou@gmail.com', '1', '123456', '', ''),
-(3, '1700195', 'Lucas Almeida', '2017-11-13', 'masculino', 'solteiro', 'lucasfalmeida1998@hotmail.com', '1', '123456', '', ''),
-(4, '1700631', 'LEANDRO S SILVA', '2017-11-13', 'masculino', 'solteiro', 'leossone@gmail.com', '1', '123456', '', ''),
-(5, '17001', 'Reinaldo Takai', '2017-11-13', 'masculino', 'solteiro', 'reinaldoTK@gmail.com', '2', '123456', '', '');
+(2, '1600142', 'Yan Santos Silva', '2017-11-13', 'masculino', 'solteiro', 'yyangtou@gmail.com', '1', '123456', 'gti', ''),
+(3, '1700195', 'Lucas Almeida Santos', '2017-11-13', 'masculino', 'solteiro', 'lucasfalmeida1998@hotmail.com', '1', '123456', 'gti', ''),
+(4, '1700631', 'LEANDRO S SILVA SAURO', '2017-11-13', 'masculino', 'solteiro', 'leossone@gmail.com', '1', '123456', 'si', ''),
+(5, '17001', 'Vanderson Takai Onofre Takuno', '2017-11-13', 'masculino', 'solteiro', 'reinaldoTK@gmail.com', '2', '123456', 'tc', ''),
+(10, '1600144', 'Biel Loko', '2017-10-10', 'masculino', 'solteiro', 'leonardo@gmail.com', '1', '123456', 'gti', '');
 
 --
 -- Indexes for dumped tables
@@ -477,7 +478,7 @@ ALTER TABLE `main_notas`
 -- AUTO_INCREMENT for table `main_usuario`
 --
 ALTER TABLE `main_usuario`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- Constraints for dumped tables
 --
