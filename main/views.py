@@ -15,9 +15,10 @@ def index(request):
                 username = request.session['username']
                 user_ra = request.session['user_ra']
                 userid = request.session['user_id']
+                curso = request.session['curso']
                 
                 if request.session['user_level'] == '1':
-                        return render(request, "PortalAluno.html", {'username': username, 'ra': user_ra})
+                        return render(request, "PortalAluno.html", {'username': username, 'ra': user_ra, 'curso': curso})
                 else:
                         return render(request, "PortalProfessor.html", {'username': username, 'ra': user_ra})
 
@@ -32,9 +33,10 @@ def boletimAluno(request):
                 username = request.session['username']
                 user_ra = request.session['user_ra']
                 userid = request.session['user_id']
-                return render(request, "boletimA.html", {'username': username, 'ra': user_ra})
+                curso = request.session['curso']
+                return render(request, "boletimA.html", {'username': username, 'ra': user_ra, 'curso': curso})
 
-        return render(request, "boletimA.html")
+        return redirect(index)
 
 def dadosAluno(request, ra_aluno):
         aluno = Usuario.objects.get(usuario_ra = ra_aluno)
@@ -164,6 +166,19 @@ def login(request):
                                 userid = login.usuario_id
                                 user_level = login.usuario_nivel
                                 user_email = login.usuario_email
+                                
+                                if login.usuario_cursos == 'ads':
+                                        request.session['curso'] = 'Analise e Desenvolvimento de Sistemas'
+                                elif login.usuario_cursos == 'si':
+                                        request.session['curso'] = 'Sistemas de Informacao'
+                                elif login.usuario_cursos == 'bd':
+                                        request.session['curso'] = 'Sistemas de Informacao'
+                                elif login.usuario_cursos == 'gti':
+                                        request.session['curso'] = 'Gestao de Sistemas de Informacao'
+                                elif login.usuario_cursos == 'tc':
+                                        request.session['curso'] = 'Telecomunicacoes'
+                                else:
+                                        request.session['curso'] = ''
 
                                 request.session['username'] = username
                                 request.session['user_id'] = userid
@@ -182,6 +197,7 @@ def logout(request):
                 del request.session['user_ra']
                 del request.session['user_level'] 
                 del request.session['user_email']
+                del request.session['curso']
         except:
                 pass
         
